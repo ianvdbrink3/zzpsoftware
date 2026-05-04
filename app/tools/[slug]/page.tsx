@@ -20,7 +20,7 @@ export default async function ToolPage({ params }: { params: Promise<{ slug: str
             {tool.badge && <span className="badge">{tool.badge}</span>}
           </div>
           <p style={{fontSize:"1.2rem",color:"#64748b",marginBottom:"1.5rem"}}>{tool.tagline}</p>
-          <a href={tool.affiliateUrl} className="btn-primary" target="_blank" rel="noopener noreferrer">Probeer {tool.name} gratis →</a>
+          <a href={tool.affiliateUrl} className="btn-primary" target="_blank" rel="noopener noreferrer">Probeer {tool.name} gratis &#8594;</a>
         </div>
         <div className="card" style={{textAlign:"center",minWidth:"160px"}}>
           <div style={{fontSize:"3rem",fontWeight:800,color:"#2563eb"}}>{tool.scores.overall}</div>
@@ -41,7 +41,7 @@ export default async function ToolPage({ params }: { params: Promise<{ slug: str
         <div className="card">
           <h2 style={{marginBottom:"1rem"}}>Functies</h2>
           <div style={{display:"grid",gridTemplateColumns:"1fr 1fr",gap:".5rem"}}>
-            {Object.entries({BTW:tool.features.btwAangifte,Facturen:tool.features.facturen,Bank:tool.features.bankKoppeling,Uren:tool.features.urenRegistratie,Projecten:tool.features.projectAdministratie,Offertes:tool.features.offertes,"Mobiel":tool.features.mobileApp,"API":tool.features.api}).map(([k,v])=>(
+            {Object.entries({BTW:tool.features.btwAangifte,Facturen:tool.features.facturen,Bank:tool.features.bankKoppeling,Uren:tool.features.urenRegistratie,Projecten:tool.features.projectAdministratie,Offertes:tool.features.offertes,Mobiel:tool.features.mobileApp,API:tool.features.api}).map(([k,v])=>(
               <div key={k} style={{display:"flex",alignItems:"center",gap:".5rem",fontSize:".9rem"}}>
                 <span style={{color:v?"#16a34a":"#ef4444"}}>{v?"✓":"✗"}</span>{k}
               </div>

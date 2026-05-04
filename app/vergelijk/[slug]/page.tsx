@@ -20,7 +20,7 @@ export default async function VergelijkPage({params}:{params:Promise<{slug:strin
             <div style={{fontSize:"3rem",fontWeight:800,color:"#2563eb"}}>{tool.scores.overall}</div>
             <div style={{color:"#64748b",marginBottom:"1rem"}}>Totaalscore</div>
             <div style={{fontWeight:600,marginBottom:"1.5rem"}}>Vanaf {formatPrice(tool.pricing.startingPrice)}</div>
-            <a href={tool.affiliateUrl} className="btn-primary" target="_blank" rel="noopener noreferrer">Probeer gratis →</a>
+            <a href={tool.affiliateUrl} className="btn-primary" target="_blank" rel="noopener noreferrer">Probeer gratis &#8594;</a>
           </div>
         ))}
       </div>

@@ -1,5 +1,5 @@
 import { getToolsSortedByRating, formatPrice } from "@/lib/tools";
-export const metadata = {title:"Boekhoudprogramma's vergelijken",description:"Vergelijk alle boekhoudprogramma's voor ZZP'ers."};
+export const metadata = {title:"Boekhoudprogrammas vergelijken",description:"Vergelijk alle boekhoudprogrammas voor ZZPers."};
 export default function BoekhoudprogrammaPage() {
   const tools = getToolsSortedByRating();
   return (
@@ -16,7 +16,7 @@ export default function BoekhoudprogrammaPage() {
               <span style={{fontWeight:700,color:"#2563eb",fontSize:"1.1rem"}}>{formatPrice(tool.pricing.startingPrice)}</span>
               <span style={{fontWeight:700,fontSize:"1.25rem"}}>{tool.scores.overall}<span style={{color:"#94a3b8",fontSize:".9rem"}}>/10</span></span>
             </div>
-            <a href={`/tools/${tool.slug}`} className="btn-primary" style={{width:"100%",justifyContent:"center"}}>Bekijk review →</a>
+            <a href={`/tools/${tool.slug}`} className="btn-primary" style={{width:"100%",justifyContent:"center"}}>Bekijk review &#8594;</a>
           </div>
         ))}
       </div>

@@ -8,7 +8,7 @@ export default function Home() {
         <div className="container" style={{textAlign:"center"}}>
           <span className="badge" style={{marginBottom:"1rem"}}>Onafhankelijk vergelijken</span>
           <h1 style={{fontSize:"clamp(2rem,5vw,3.5rem)",fontWeight:800,lineHeight:1.2,marginBottom:"1.5rem"}}>Beste boekhoudprogramma<br/>voor ZZP&apos;ers in 2025</h1>
-          <p style={{fontSize:"1.2rem",color:"#64748b",maxWidth:"600px",margin:"0 auto 2.5rem"}}>Vergelijk {tools.length} boekhoudprogramma&apos;s op prijs, functies en gebruiksgemak. Vind de beste keuze voor jouw situatie.</p>
+          <p style={{fontSize:"1.2rem",color:"#64748b",maxWidth:"600px",margin:"0 auto 2.5rem"}}>Vergelijk {tools.length} boekhoudprogramma&apos;s op prijs, functies en gebruiksgemak.</p>
           <a href="/boekhoudprogramma" className="btn-primary">Bekijk alle vergelijkingen</a>
         </div>
       </section>
@@ -36,7 +36,7 @@ export default function Home() {
                     <div style={{fontWeight:700,fontSize:"1.1rem"}}>{formatPrice(tool.pricing.startingPrice)}</div>
                     <div style={{fontSize:".8rem",color:"#94a3b8"}}>vanaf</div>
                   </div>
-                  <span className="btn-outline" style={{flexShrink:0}}>Bekijk →</span>
+                  <span className="btn-outline" style={{flexShrink:0}}>Bekijk &#8594;</span>
                 </div>
               </a>
             ))}
