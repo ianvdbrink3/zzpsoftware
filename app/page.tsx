@@ -1,48 +1,175 @@
-import { getToolsSortedByRating, formatPrice } from "@/lib/tools";
-import type { Tool } from "@/types";
-export default function Home() {
-  const tools = getToolsSortedByRating();
+import { getToolsSortedByRating, getCheapestPlan, formatPrice } from '@/lib/tools'
+import type { Tool } from '@/types'
+
+function StarRating({ rating }: { rating: number }) {
   return (
-    <>
-      <section style={{background:"linear-gradient(135deg,#eff6ff 0%,#fff 100%)",padding:"5rem 0 4rem"}}>
-        <div className="container" style={{textAlign:"center"}}>
-          <span className="badge" style={{marginBottom:"1rem"}}>Onafhankelijk vergelijken</span>
-          <h1 style={{fontSize:"clamp(2rem,5vw,3.5rem)",fontWeight:800,lineHeight:1.2,marginBottom:"1.5rem"}}>Beste boekhoudprogramma<br/>voor ZZP&apos;ers in 2025</h1>
-          <p style={{fontSize:"1.2rem",color:"#64748b",maxWidth:"600px",margin:"0 auto 2.5rem"}}>Vergelijk {tools.length} boekhoudprogramma&apos;s op prijs, functies en gebruiksgemak.</p>
-          <a href="/boekhoudprogramma" className="btn-primary">Bekijk alle vergelijkingen</a>
+    <span className="stars">
+      {[1,2,3,4,5].map(i => (
+        <span key={i} style={{ opacity: i <= Math.round(rating) ? 1 : 0.25 }}>★</span>
+      ))}
+    </span>
+  )
+}
+
+function ToolCard({ tool, rank }: { tool: Tool; rank: number }) {
+  const lowestPrice = getCheapestPlan(tool)
+  const isTopPick = rank === 1
+  return (
+    <div className="card" style={{ padding: 24, position: 'relative', border: isTopPick ? '2px solid var(--accent)' : undefined }}>
+      {isTopPick && (
+        <div style={{ position: 'absolute', top: -12, left: 20, background: 'var(--accent)', color: '#fff', fontSize: 11, fontWeight: 700, padding: '3px 10px', borderRadius: 20, textTransform: 'uppercase', letterSpacing: '0.05em' }}>
+          Beste keuze
         </div>
-      </section>
-      <section style={{padding:"4rem 0"}}>
-        <div className="container">
-          <h2 className="section-title">Top boekhoudprogramma&apos;s</h2>
-          <p className="section-subtitle">Gesorteerd op beoordeling</p>
-          <div style={{display:"flex",flexDirection:"column",gap:"1rem"}}>
-            {tools.map((tool: Tool, i: number) => (
-              <a key={tool.id} href={`/tools/${tool.slug}`} style={{textDecoration:"none",color:"inherit"}}>
-                <div className="card" style={{display:"flex",alignItems:"center",gap:"1.5rem",flexWrap:"wrap"}}>
-                  <div style={{background:"#f1f5f9",borderRadius:"8px",width:"48px",height:"48px",display:"flex",alignItems:"center",justifyContent:"center",fontWeight:700,color:"#2563eb",flexShrink:0}}>{i+1}</div>
-                  <div style={{flex:1,minWidth:"200px"}}>
-                    <div style={{display:"flex",alignItems:"center",gap:".75rem",marginBottom:".25rem"}}>
-                      <h3 style={{fontSize:"1.1rem",fontWeight:700}}>{tool.name}</h3>
-                      {tool.badge && <span className="badge">{tool.badge}</span>}
-                    </div>
-                    <p style={{color:"#64748b",fontSize:".9rem"}}>{tool.tagline}</p>
-                  </div>
-                  <div style={{textAlign:"center",minWidth:"80px"}}>
-                    <div style={{fontSize:"1.5rem",fontWeight:800,color:"#2563eb"}}>{tool.scores.overall}</div>
-                    <div style={{fontSize:".8rem",color:"#94a3b8"}}>/ 10</div>
-                  </div>
-                  <div style={{textAlign:"center",minWidth:"100px"}}>
-                    <div style={{fontWeight:700,fontSize:"1.1rem"}}>{formatPrice(tool.pricing.startingPrice)}</div>
-                    <div style={{fontSize:".8rem",color:"#94a3b8"}}>vanaf</div>
-                  </div>
-                  <span className="btn-outline" style={{flexShrink:0}}>Bekijk &#8594;</span>
-                </div>
-              </a>
-            ))}
+      )}
+      <div style={{ display: 'flex', alignItems: 'flex-start', gap: 16, marginBottom: 16 }}>
+        <div style={{ width: 48, height: 48, borderRadius: 10, background: 'var(--bg-subtle)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 20, fontWeight: 700, color: 'var(--accent)', flexShrink: 0 }}>
+          {tool.name[0]}
+        </div>
+        <div style={{ flex: 1 }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: 8, flexWrap: 'wrap' }}>
+            <span style={{ fontWeight: 600, fontSize: 17 }}>{tool.name}</span>
+            <span style={{ fontSize: 22, fontWeight: 700, color: 'var(--accent)' }}>{tool.rating}</span>
+            <StarRating rating={tool.rating} />
+            <span style={{ fontSize: 13, color: 'var(--text-tertiary)' }}>({tool.reviewCount})</span>
+          </div>
+          <p style={{ margin: '4px 0 0', fontSize: 14, color: 'var(--text-secondary)' }}>{tool.tagline}</p>
+        </div>
+        <div style={{ textAlign: 'right', flexShrink: 0 }}>
+          <div style={{ fontSize: 20, fontWeight: 700 }}>
+            {lowestPrice === 0 ? <span style={{ color: 'var(--accent)' }}>Gratis</span> : `€${lowestPrice}`}
+          </div>
+          {lowestPrice > 0 && <div style={{ fontSize: 12, color: 'var(--text-tertiary)' }}>per maand</div>}
+          {tool.pricing.freeTrial > 0 && <div style={{ fontSize: 12, color: 'var(--accent)', marginTop: 2 }}>{tool.pricing.freeTrial} dagen gratis</div>}
+        </div>
+      </div>
+      <div style={{ display: 'flex', gap: 6, flexWrap: 'wrap', marginBottom: 16 }}>
+        {[
+          tool.features.btwAangifte && 'BTW-aangifte',
+          tool.features.bankKoppeling && 'Bankkoppeling',
+          tool.features.mobieleApp && 'App',
+          tool.features.offertes && 'Offertes',
+          tool.features.gratisPlan && 'Gratis plan',
+        ].filter(Boolean).map(f => (
+          <span key={f as string} className="badge badge-gray">{f}</span>
+        ))}
+      </div>
+      <div style={{ display: 'flex', gap: 10, alignItems: 'center', flexWrap: 'wrap' }}>
+        <a href={tool.affiliateUrl} className="btn-primary" style={{ flex: 1, justifyContent: 'center' }}>Probeer {tool.name} →</a>
+        <a href={`/tools/${tool.slug}`} className="btn-secondary" style={{ fontSize: 13 }}>Lees review</a>
+      </div>
+    </div>
+  )
+}
+
+export default function HomePage() {
+  const sortedTools = getToolsSortedByRating()
+  return (
+    <div>
+      <section style={{ background: 'linear-gradient(135deg, #0F5232 0%, #1A7A4A 50%, #228B5A 100%)', padding: '72px 24px 80px', color: '#fff' }}>
+        <div style={{ maxWidth: 740, margin: '0 auto', textAlign: 'center' }}>
+          <div style={{ display: 'inline-flex', alignItems: 'center', gap: 6, background: 'rgba(255,255,255,0.15)', padding: '5px 14px', borderRadius: 20, fontSize: 13, marginBottom: 20 }}>
+            ✓ Bijgewerkt mei 2026 · 6 programma's vergeleken
+          </div>
+          <h1 style={{ fontSize: 'clamp(28px, 5vw, 48px)', fontWeight: 700, marginBottom: 16, lineHeight: 1.15 }}>
+            Het beste boekhoudprogramma<br />voor ZZP'ers in 2026
+          </h1>
+          <p style={{ fontSize: 18, opacity: 0.85, marginBottom: 32, lineHeight: 1.6 }}>
+            We hebben alle populaire opties getest, vergeleken en eerlijk beoordeeld. Zodat jij in 5 minuten weet welk programma bij jou past.
+          </p>
+          <div style={{ display: 'flex', gap: 12, justifyContent: 'center', flexWrap: 'wrap' }}>
+            <a href="#vergelijking" className="btn-primary" style={{ background: '#fff', color: 'var(--accent-text)', fontSize: 15, padding: '12px 28px' }}>Bekijk de vergelijking ↓</a>
+            <a href="/boekhoudprogramma" className="btn-secondary" style={{ color: '#fff', borderColor: 'rgba(255,255,255,0.35)', fontSize: 15, padding: '12px 28px', background: 'transparent' }}>Alle opties →</a>
           </div>
         </div>
       </section>
-    </>
-  );
+
+      <section style={{ borderBottom: '1px solid var(--border)', background: 'var(--bg-card)' }}>
+        <div style={{ maxWidth: 1100, margin: '0 auto', padding: '0 24px', display: 'flex', justifyContent: 'center' }}>
+          {[['1,2 mln', "ZZP'ers in NL"], ['6', "Programma's getest"], ['100%', 'Onafhankelijk'], ['Gratis', 'Vergelijking']].map(([num, label]) => (
+            <div key={label} style={{ padding: '20px 32px', textAlign: 'center', borderRight: '1px solid var(--border)' }}>
+              <div style={{ fontSize: 22, fontWeight: 700, color: 'var(--accent)' }}>{num}</div>
+              <div style={{ fontSize: 13, color: 'var(--text-secondary)', marginTop: 2 }}>{label}</div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section id="vergelijking" style={{ maxWidth: 820, margin: '0 auto', padding: '64px 24px' }}>
+        <h2 style={{ fontSize: 28, fontWeight: 700, marginBottom: 8 }}>Beste boekhoudprogramma's 2026</h2>
+        <p style={{ color: 'var(--text-secondary)', marginBottom: 36, fontSize: 16 }}>Gesorteerd op overall beoordeling op basis van gebruiksgemak, functies, prijs en klanttevredenheid.</p>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
+          {sortedTools.map((tool, i) => <ToolCard key={tool.slug} tool={tool} rank={i + 1} />)}
+        </div>
+        <div style={{ marginTop: 20, padding: '12px 16px', background: 'var(--bg-subtle)', borderRadius: 8, fontSize: 13, color: 'var(--text-tertiary)' }}>
+          * We ontvangen mogelijk een vergoeding als je via onze links een aankoop doet. Dit heeft geen invloed op onze beoordelingen.
+        </div>
+      </section>
+
+      <section style={{ background: 'var(--bg-card)', borderTop: '1px solid var(--border)', borderBottom: '1px solid var(--border)', padding: '64px 24px' }}>
+        <div style={{ maxWidth: 1100, margin: '0 auto' }}>
+          <h2 style={{ fontSize: 26, fontWeight: 700, marginBottom: 8, textAlign: 'center' }}>Functies op een rij</h2>
+          <p style={{ color: 'var(--text-secondary)', textAlign: 'center', marginBottom: 36 }}>Welk programma heeft wat je nodig hebt?</p>
+          <div style={{ overflowX: 'auto' }}>
+            <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: 14, minWidth: 600 }}>
+              <thead>
+                <tr style={{ borderBottom: '2px solid var(--border)' }}>
+                  <th style={{ textAlign: 'left', padding: '10px 12px', fontWeight: 600, color: 'var(--text-secondary)', fontSize: 12, textTransform: 'uppercase', letterSpacing: '0.05em', width: 160 }}>Functie</th>
+                  {sortedTools.map(t => <th key={t.slug} style={{ padding: '10px 12px', fontWeight: 600, textAlign: 'center', fontSize: 13 }}>{t.name}</th>)}
+                </tr>
+              </thead>
+              <tbody>
+                {[['BTW-aangifte','btwAangifte'],['Bankkoppeling','bankKoppeling'],['Mobiele app','mobieleApp'],['Offertes','offertes'],['Urenregistratie','urenRegistratie'],['Projecten','projecten'],['API-toegang','api'],['Gratis plan','gratisPlan']].map(([label, key]) => (
+                  <tr key={key} style={{ borderBottom: '1px solid var(--border)' }}>
+                    <td style={{ padding: '10px 12px', color: 'var(--text-secondary)' }}>{label}</td>
+                    {sortedTools.map(t => <td key={t.slug} style={{ padding: '10px 12px', textAlign: 'center' }}>{t.features[key as keyof typeof t.features] ? '✓' : '—'}</td>)}
+                  </tr>
+                ))}
+                <tr style={{ borderBottom: '1px solid var(--border)' }}>
+                  <td style={{ padding: '10px 12px', color: 'var(--text-secondary)' }}>Laagste prijs</td>
+                  {sortedTools.map(t => <td key={t.slug} style={{ padding: '10px 12px', textAlign: 'center', fontWeight: 600 }}>{formatPrice(getCheapestPlan(t))}</td>)}
+                </tr>
+                <tr>
+                  <td style={{ padding: '10px 12px', color: 'var(--text-secondary)' }}>Gratis proef</td>
+                  {sortedTools.map(t => <td key={t.slug} style={{ padding: '10px 12px', textAlign: 'center', fontSize: 13, color: 'var(--accent)' }}>{t.pricing.freeTrial > 0 ? `${t.pricing.freeTrial} dgn` : '—'}</td>)}
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <section style={{ maxWidth: 820, margin: '0 auto', padding: '64px 24px' }}>
+        <h2 style={{ fontSize: 26, fontWeight: 700, marginBottom: 24 }}>Welk programma past bij jou?</h2>
+        <div style={{ display: 'grid', gap: 14 }}>
+          {[
+            { icon: '🚀', title: "Je bent net gestart als ZZP'er", text: 'Kies Jortt of Moneybird. Beide zijn intuïtief en je bent binnen 10 minuten up-and-running.', link: '/tools/moneybird' },
+            { icon: '💰', title: 'Je wilt zo goedkoop mogelijk', text: 'e-Boekhouden.nl is de goedkoopste complete oplossing voor €8 per maand.', link: '/tools/e-boekhouden' },
+            { icon: '📊', title: 'Je werkt samen met een accountant', text: 'Exact Online of Twinfield zijn de standaard in de accountancy.', link: '/tools/exact-online' },
+            { icon: '⚡', title: 'Je wilt de meeste functies', text: 'Snelstart of Exact Online bieden het uitgebreidste pakket.', link: '/tools/snelstart' },
+          ].map(({ icon, title, text, link }) => (
+            <div key={title} className="card" style={{ padding: '20px 24px', display: 'flex', gap: 16, alignItems: 'flex-start' }}>
+              <span style={{ fontSize: 24, flexShrink: 0 }}>{icon}</span>
+              <div style={{ flex: 1 }}>
+                <div style={{ fontWeight: 600, marginBottom: 4 }}>{title}</div>
+                <p style={{ margin: 0, fontSize: 14, color: 'var(--text-secondary)' }}>{text}</p>
+              </div>
+              <a href={link} style={{ flexShrink: 0, fontSize: 13, color: 'var(--accent)', fontWeight: 500 }}>Lees meer →</a>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section style={{ background: 'var(--bg-card)', borderTop: '1px solid var(--border)', padding: '64px 24px' }}>
+        <div style={{ maxWidth: 520, margin: '0 auto', textAlign: 'center' }}>
+          <h2 style={{ fontSize: 24, fontWeight: 700, marginBottom: 8 }}>Blijf op de hoogte</h2>
+          <p style={{ color: 'var(--text-secondary)', marginBottom: 24 }}>Ontvang onze maandelijkse update met nieuwe software, prijswijzigingen en ZZP-tips. Geen spam.</p>
+          <form style={{ display: 'flex', gap: 8, maxWidth: 400, margin: '0 auto' }} action="/api/subscribe" method="POST">
+            <input type="email" name="email" placeholder="jouw@email.nl" required style={{ flex: 1, padding: '10px 14px', borderRadius: 10, border: '1px solid var(--border)', fontSize: 14, background: 'var(--bg)', outline: 'none' }} />
+            <button type="submit" className="btn-primary" style={{ whiteSpace: 'nowrap' }}>Aanmelden</button>
+          </form>
+          <p style={{ fontSize: 12, color: 'var(--text-tertiary)', marginTop: 10 }}>Je kunt je altijd uitschrijven.</p>
+        </div>
+      </section>
+    </div>
+  )
 }

@@ -1,5 +1,53 @@
-export interface ToolPlan {name:string;price:number;features:string[]}
-export interface ToolPricing {startingPrice:number;currency:string;billingPeriod:string;plans:ToolPlan[]}
-export interface ToolFeatures {btwAangifte:boolean;facturen:boolean;bankKoppeling:boolean;urenRegistratie:boolean;projectAdministratie:boolean;offertes:boolean;mobileApp:boolean;api:boolean}
-export interface ToolScore {overall:number;easeOfUse:number;features:number;support:number;valueForMoney:number}
-export interface Tool {id:string;name:string;slug:string;tagline:string;description:string;website:string;logo:string;category:string;pricing:ToolPricing;features:ToolFeatures;scores:ToolScore;pros:string[];cons:string[];affiliateUrl:string;badge:string|null}
+export interface ToolPlan {
+  name: string
+  price: number
+  per: string
+  features: string[]
+}
+
+export interface ToolPricing {
+  free: boolean
+  freeTrial: number
+  plans: ToolPlan[]
+}
+
+export interface ToolFeatures {
+  btwAangifte: boolean
+  bankKoppeling: boolean
+  mobieleApp: boolean
+  offertes: boolean
+  urenRegistratie: boolean
+  projecten: boolean
+  api: boolean
+  gratisPlan: boolean
+  [key: string]: boolean
+}
+
+export interface ToolScore {
+  gebruiksgemak: number
+  functies: number
+  prijs: number
+  support: number
+  overall: number
+}
+
+export interface Tool {
+  slug: string
+  name: string
+  tagline: string
+  description: string
+  logo: string
+  affiliateUrl: string
+  affiliateNetwork: string
+  commissionEur: number
+  commissionType: string
+  pricing: ToolPricing
+  rating: number
+  reviewCount: number
+  pros: string[]
+  cons: string[]
+  bestFor: string[]
+  categories: string[]
+  features: ToolFeatures
+  score: ToolScore
+}

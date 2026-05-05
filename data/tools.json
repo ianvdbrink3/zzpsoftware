@@ -1,1 +1,155 @@
-[{"id":"moneybird","name":"Moneybird","slug":"moneybird","tagline":"De slimste boekhoudsoftware voor ZZP'ers","description":"Moneybird is de populairste boekhoudapp voor freelancers in Nederland. Met een intuïtieve interface en slimme automatisering bespaar je uren per maand.","website":"https://www.moneybird.nl","logo":"/logos/moneybird.svg","category":"boekhoudprogramma","pricing":{"startingPrice":0,"currency":"EUR","billingPeriod":"monthly","plans":[{"name":"Gratis","price":0,"features":["Max 5 contacten","Basis facturen","Bankkoppeling"]},{"name":"Zakelijk","price":17,"features":["Onbeperkte contacten","BTW-aangifte","Urenregistratie","Alle rapporten"]}]},"features":{"btwAangifte":true,"facturen":true,"bankKoppeling":true,"urenRegistratie":true,"projectAdministratie":true,"offertes":true,"mobileApp":true,"api":true},"scores":{"overall":9.2,"easeOfUse":9.5,"features":8.8,"support":9.0,"valueForMoney":9.1},"pros":["Zeer gebruiksvriendelijk","Gratis plan beschikbaar","Uitstekende mobiele app"],"cons":["Beperkt gratis plan","Geen salarisadministratie"],"affiliateUrl":"https://www.moneybird.nl?ref=zzpsoftware","badge":"Beste keuze"},{"id":"snelstart","name":"SnelStart","slug":"snelstart","tagline":"Professionele boekhouding voor elke ondernemer","description":"SnelStart biedt uitgebreide boekhoudmogelijkheden voor ZZP'ers en mkb-bedrijven. Betrouwbaar en compleet.","website":"https://www.snelstart.nl","logo":"/logos/snelstart.svg","category":"boekhoudprogramma","pricing":{"startingPrice":9,"currency":"EUR","billingPeriod":"monthly","plans":[{"name":"Start","price":9,"features":["Basis boekhouding","Facturen","BTW-aangifte"]},{"name":"Plus","price":18,"features":["Alles van Start","Bankieren","Urenregistratie","Voorraad"]}]},"features":{"btwAangifte":true,"facturen":true,"bankKoppeling":true,"urenRegistratie":true,"projectAdministratie":false,"offertes":true,"mobileApp":true,"api":true},"scores":{"overall":8.7,"easeOfUse":8.3,"features":9.0,"support":8.5,"valueForMoney":8.8},"pros":["Zeer compleet pakket","Goede prijs-kwaliteit","Betrouwbaar en stabiel"],"cons":["Minder intuïtief dan Moneybird","Interface wat verouderd"],"affiliateUrl":"https://www.snelstart.nl?ref=zzpsoftware","badge":null},{"id":"jortt","name":"Jortt","slug":"jortt","tagline":"Boekhouding zo simpel als een app","description":"Jortt is speciaal ontworpen voor ZZP'ers die zo min mogelijk tijd aan boekhouding willen besteden.","website":"https://www.jortt.nl","logo":"/logos/jortt.svg","category":"boekhoudprogramma","pricing":{"startingPrice":12,"currency":"EUR","billingPeriod":"monthly","plans":[{"name":"ZZP","price":12,"features":["Onbeperkte facturen","BTW-aangifte","Bankkoppeling","IB-aangifte helper"]}]},"features":{"btwAangifte":true,"facturen":true,"bankKoppeling":true,"urenRegistratie":false,"projectAdministratie":false,"offertes":true,"mobileApp":true,"api":false},"scores":{"overall":8.4,"easeOfUse":9.2,"features":7.5,"support":8.8,"valueForMoney":8.6},"pros":["Extreem eenvoudig","IB-aangifte hulp","Goede klantenservice"],"cons":["Beperkte functionaliteit","Geen urenregistratie","Geen API"],"affiliateUrl":"https://www.jortt.nl?ref=zzpsoftware","badge":"Beste voor starters"},{"id":"exact-online","name":"Exact Online","slug":"exact-online","tagline":"De complete bedrijfssoftware voor groeiende ondernemers","description":"Exact Online is de meest uitgebreide boekhoudoplossing voor ondernemers die serieus willen groeien.","website":"https://www.exact.com/nl","logo":"/logos/exact.svg","category":"boekhoudprogramma","pricing":{"startingPrice":39,"currency":"EUR","billingPeriod":"monthly","plans":[{"name":"Essentials","price":39,"features":["Boekhouding","Facturen","BTW","Rapportages"]},{"name":"Advanced","price":69,"features":["Alles van Essentials","Projecten","Budgettering","API toegang"]}]},"features":{"btwAangifte":true,"facturen":true,"bankKoppeling":true,"urenRegistratie":true,"projectAdministratie":true,"offertes":true,"mobileApp":true,"api":true},"scores":{"overall":8.9,"easeOfUse":7.8,"features":9.8,"support":8.7,"valueForMoney":7.9},"pros":["Meest complete pakket","Uitstekende rapportages","Groot ecosysteem"],"cons":["Duurder dan alternatieven","Steile leercurve","Overkill voor kleine ZZP"],"affiliateUrl":"https://www.exact.com/nl?ref=zzpsoftware","badge":null},{"id":"e-boekhouden","name":"e-Boekhouden","slug":"e-boekhouden","tagline":"Betaalbare online boekhouding voor ZZP'ers","description":"e-Boekhouden is een van de goedkoopste complete boekhoudpakketten voor Nederlandse ondernemers.","website":"https://www.e-boekhouden.nl","logo":"/logos/eboekhouden.svg","category":"boekhoudprogramma","pricing":{"startingPrice":8,"currency":"EUR","billingPeriod":"monthly","plans":[{"name":"ZZP","price":8,"features":["Facturen","BTW-aangifte","Bankkoppeling","Offertes"]}]},"features":{"btwAangifte":true,"facturen":true,"bankKoppeling":true,"urenRegistratie":true,"projectAdministratie":false,"offertes":true,"mobileApp":false,"api":true},"scores":{"overall":7.9,"easeOfUse":7.5,"features":8.2,"support":7.8,"valueForMoney":9.2},"pros":["Zeer betaalbaar","Compleet voor de prijs","Gratis proefperiode"],"cons":["Geen mobiele app","Interface verouderd","Minder gebruiksvriendelijk"],"affiliateUrl":"https://www.e-boekhouden.nl?ref=zzpsoftware","badge":"Beste budgetkeuze"},{"id":"twinfield","name":"Twinfield","slug":"twinfield","tagline":"Professionele boekhouding voor de serieuze ondernemer","description":"Twinfield is een professioneel boekhoudpakket dat vaak door accountants wordt gebruikt en aanbevolen.","website":"https://www.twinfield.nl","logo":"/logos/twinfield.svg","category":"boekhoudprogramma","pricing":{"startingPrice":25,"currency":"EUR","billingPeriod":"monthly","plans":[{"name":"Start","price":25,"features":["Boekhouding","Facturen","BTW","Bankkoppeling"]},{"name":"Professional","price":45,"features":["Alles van Start","Projecten","Consolidatie","Multi-valuta"]}]},"features":{"btwAangifte":true,"facturen":true,"bankKoppeling":true,"urenRegistratie":true,"projectAdministratie":true,"offertes":false,"mobileApp":false,"api":true},"scores":{"overall":8.1,"easeOfUse":7.2,"features":9.1,"support":8.3,"valueForMoney":7.7},"pros":["Accountant-bewezen","Uitgebreide functionaliteit","Multi-valuta support"],"cons":["Moeilijk zelf op te zetten","Geen mobiele app","Geen offertemodule"],"affiliateUrl":"https://www.twinfield.nl?ref=zzpsoftware","badge":null}]
+[
+  {
+    "slug": "moneybird",
+    "name": "Moneybird",
+    "tagline": "De slimste boekhouding voor ZZP'ers",
+    "description": "Moneybird is de populairste boekhoudapp van Nederland. Volledig in de cloud, makkelijk in gebruik en specifiek ontworpen voor ZZP'ers en kleine bedrijven.",
+    "logo": "/logos/moneybird.svg",
+    "affiliateUrl": "https://www.moneybird.nl?ref=JOUWCODE",
+    "affiliateNetwork": "direct",
+    "commissionEur": 55,
+    "commissionType": "CPA",
+    "pricing": {
+      "free": true,
+      "freeTrial": 30,
+      "plans": [
+        { "name": "Gratis", "price": 0, "per": "maand", "features": ["5 facturen/mnd", "1 bankrekening", "Basis rapportages"] },
+        { "name": "ZZP", "price": 14, "per": "maand", "features": ["Onbeperkt factureren", "Alle bankrekeningen", "BTW-aangifte", "Offertes"] },
+        { "name": "Team", "price": 29, "per": "maand", "features": ["Alles van ZZP", "Meerdere gebruikers", "Projecten", "API-toegang"] }
+      ]
+    },
+    "rating": 4.7, "reviewCount": 1240,
+    "pros": ["Zeer gebruiksvriendelijk", "Mooie interface", "Goede mobiele app", "Snelle klantenservice", "Automatische bankkoppeling"],
+    "cons": ["Duurder dan sommige alternatieven", "Geen offline modus", "Beperkte rapportages in gratis plan"],
+    "bestFor": ["Starters", "Creatieve ZZP'ers", "Wie snel wil beginnen"],
+    "categories": ["boekhouding", "facturatie", "btw"],
+    "features": { "btwAangifte": true, "bankKoppeling": true, "mobieleApp": true, "offertes": true, "urenRegistratie": false, "projecten": true, "api": true, "gratisPlan": true },
+    "score": { "gebruiksgemak": 4.8, "functies": 4.4, "prijs": 4.2, "support": 4.6, "overall": 4.7 }
+  },
+  {
+    "slug": "snelstart",
+    "name": "Snelstart",
+    "tagline": "Degelijk boekhouden voor de Nederlandse ondernemer",
+    "description": "Snelstart is al jaren een betrouwbare keuze voor Nederlandse ondernemers. Beschikbaar als desktop én cloud.",
+    "logo": "/logos/snelstart.svg",
+    "affiliateUrl": "https://www.snelstart.nl?ref=JOUWCODE",
+    "affiliateNetwork": "daisycon",
+    "commissionEur": 45,
+    "commissionType": "CPA",
+    "pricing": {
+      "free": false, "freeTrial": 30,
+      "plans": [
+        { "name": "Start", "price": 9, "per": "maand", "features": ["Factureren", "Basisboekhouding", "BTW-aangifte"] },
+        { "name": "Plus", "price": 19, "per": "maand", "features": ["Alles van Start", "Offertes", "Inkoopfacturen", "Bankimport"] },
+        { "name": "Pro", "price": 39, "per": "maand", "features": ["Alles van Plus", "Meerdere gebruikers", "Voorraadbeheer", "API"] }
+      ]
+    },
+    "rating": 4.3, "reviewCount": 876,
+    "pros": ["Betaalbaar beginplan", "Uitgebreide functies", "Desktop én cloud", "Groot gebruikersbestand"],
+    "cons": ["Minder moderne interface", "Steile leercurve", "Mobiele app minder sterk"],
+    "bestFor": ["Ervaren ondernemers", "Wie veel functies nodig heeft", "Budgetbewuste ZZP'ers"],
+    "categories": ["boekhouding", "facturatie", "btw"],
+    "features": { "btwAangifte": true, "bankKoppeling": true, "mobieleApp": true, "offertes": true, "urenRegistratie": false, "projecten": false, "api": true, "gratisPlan": false },
+    "score": { "gebruiksgemak": 3.8, "functies": 4.6, "prijs": 4.5, "support": 4.0, "overall": 4.3 }
+  },
+  {
+    "slug": "jortt",
+    "name": "Jortt",
+    "tagline": "Boekhouding zo simpel als een app",
+    "description": "Jortt is ontworpen voor ZZP'ers die zo min mogelijk tijd aan administratie willen besteden.",
+    "logo": "/logos/jortt.svg",
+    "affiliateUrl": "https://www.jortt.nl?ref=JOUWCODE",
+    "affiliateNetwork": "direct",
+    "commissionEur": 40,
+    "commissionType": "CPA",
+    "pricing": {
+      "free": false, "freeTrial": 30,
+      "plans": [
+        { "name": "Starter", "price": 7, "per": "maand", "features": ["10 facturen/mnd", "BTW-aangifte", "Basisboekhouding"] },
+        { "name": "ZZP", "price": 15, "per": "maand", "features": ["Onbeperkt factureren", "Alle bankrekeningen", "Jaarrekening"] }
+      ]
+    },
+    "rating": 4.5, "reviewCount": 534,
+    "pros": ["Heel eenvoudig in gebruik", "Lage prijs", "Snelle onboarding", "Nette facturen"],
+    "cons": ["Minder functies dan concurrenten", "Geen offertemodule", "Beperkte rapportages"],
+    "bestFor": ["Absolute beginners", "ZZP'ers met weinig facturen", "Wie snel wil starten"],
+    "categories": ["boekhouding", "facturatie", "btw"],
+    "features": { "btwAangifte": true, "bankKoppeling": true, "mobieleApp": true, "offertes": false, "urenRegistratie": false, "projecten": false, "api": false, "gratisPlan": false },
+    "score": { "gebruiksgemak": 4.9, "functies": 3.8, "prijs": 4.7, "support": 4.2, "overall": 4.5 }
+  },
+  {
+    "slug": "exact-online",
+    "name": "Exact Online",
+    "tagline": "Professionele boekhouding voor groeiende ondernemers",
+    "description": "Exact Online is de keuze voor ZZP'ers en klein MKB die een professioneel pakket willen met uitgebreide rapportages.",
+    "logo": "/logos/exact.svg",
+    "affiliateUrl": "https://www.exact.com/nl?ref=JOUWCODE",
+    "affiliateNetwork": "direct",
+    "commissionEur": 120,
+    "commissionType": "lead",
+    "pricing": {
+      "free": false, "freeTrial": 30,
+      "plans": [
+        { "name": "Essentials", "price": 39, "per": "maand", "features": ["Boekhouding", "Facturatie", "BTW", "Bankenkoppeling"] },
+        { "name": "Advanced", "price": 69, "per": "maand", "features": ["Alles van Essentials", "Projecten", "Budgetten", "API"] }
+      ]
+    },
+    "rating": 4.2, "reviewCount": 2100,
+    "pros": ["Uitgebreide rapportages", "Veel koppelingen", "Professioneel", "Goede accountant-integratie"],
+    "cons": ["Duurder dan concurrenten", "Complex voor starters", "Verouderende interface"],
+    "bestFor": ["Groeiende ZZP'ers", "Wie samenwerkt met een accountant", "MKB"],
+    "categories": ["boekhouding", "facturatie", "btw", "projecten"],
+    "features": { "btwAangifte": true, "bankKoppeling": true, "mobieleApp": true, "offertes": true, "urenRegistratie": true, "projecten": true, "api": true, "gratisPlan": false },
+    "score": { "gebruiksgemak": 3.6, "functies": 4.9, "prijs": 3.4, "support": 4.1, "overall": 4.2 }
+  },
+  {
+    "slug": "e-boekhouden",
+    "name": "e-Boekhouden.nl",
+    "tagline": "De goedkoopste boekhoudoplossing van Nederland",
+    "description": "e-Boekhouden.nl biedt al meer dan 20 jaar een van de goedkoopste complete boekhoudoplossingen voor ZZP'ers.",
+    "logo": "/logos/eboekhouden.svg",
+    "affiliateUrl": "https://www.e-boekhouden.nl?ref=JOUWCODE",
+    "affiliateNetwork": "tradetracker",
+    "commissionEur": 20,
+    "commissionType": "CPA",
+    "pricing": {
+      "free": false, "freeTrial": 30,
+      "plans": [
+        { "name": "Solo", "price": 8, "per": "maand", "features": ["Onbeperkt factureren", "BTW-aangifte", "Boekhouding"] },
+        { "name": "Basis", "price": 12, "per": "maand", "features": ["Alles van Solo", "Offertes", "Extra gebruiker"] }
+      ]
+    },
+    "rating": 4.0, "reviewCount": 1560,
+    "pros": ["Zeer goedkoop", "Compleet pakket", "Lange staat van dienst"],
+    "cons": ["Verouderde interface", "Minder intuïtief", "Ouderwetse UX"],
+    "bestFor": ["Prijsbewuste ZZP'ers", "Wie geen fancy interface nodig heeft"],
+    "categories": ["boekhouding", "facturatie", "btw"],
+    "features": { "btwAangifte": true, "bankKoppeling": true, "mobieleApp": true, "offertes": true, "urenRegistratie": false, "projecten": false, "api": true, "gratisPlan": false },
+    "score": { "gebruiksgemak": 3.4, "functies": 4.1, "prijs": 4.9, "support": 3.8, "overall": 4.0 }
+  },
+  {
+    "slug": "twinfield",
+    "name": "Twinfield",
+    "tagline": "Boekhouden op enterprise-niveau, ook voor ZZP",
+    "description": "Twinfield (Wolters Kluwer) is een professioneel boekhoudpakket voor ambitieuze ZZP'ers en klein MKB.",
+    "logo": "/logos/twinfield.svg",
+    "affiliateUrl": "https://www.twinfield.nl?ref=JOUWCODE",
+    "affiliateNetwork": "direct",
+    "commissionEur": 90,
+    "commissionType": "lead",
+    "pricing": {
+      "free": false, "freeTrial": 30,
+      "plans": [
+        { "name": "Starter", "price": 25, "per": "maand", "features": ["Boekhouding", "Facturatie", "BTW", "Rapportages"] },
+        { "name": "Professional", "price": 55, "per": "maand", "features": ["Alles van Starter", "Meerdere valuta", "Consolidatie", "API"] }
+      ]
+    },
+    "rating": 4.1, "reviewCount": 340,
+    "pros": ["Zeer uitgebreid", "Betrouwbare naam", "Goede accountantsintegratie"],
+    "cons": ["Duur voor starters", "Complex in gebruik", "Overdreven voor kleine ZZP'ers"],
+    "bestFor": ["Groeiende ondernemers", "Wie een accountant inschakelt"],
+    "categories": ["boekhouding", "facturatie", "btw", "projecten"],
+    "features": { "btwAangifte": true, "bankKoppeling": true, "mobieleApp": false, "offertes": true, "urenRegistratie": true, "projecten": true, "api": true, "gratisPlan": false },
+    "score": { "gebruiksgemak": 3.5, "functies": 4.8, "prijs": 3.3, "support": 4.0, "overall": 4.1 }
+  }
+]
