@@ -8,6 +8,9 @@ const VERSUS_PAIRS = [
   ['exact-online', 'twinfield'],
   ['snelstart', 'jortt'],
   ['moneybird', 'e-boekhouden'],
+  ['moneybird', 'exact-online'],
+  ['snelstart', 'e-boekhouden'],
+  ['jortt', 'e-boekhouden'],
 ]
 
 export async function generateStaticParams() {

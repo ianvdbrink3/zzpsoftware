@@ -9,13 +9,15 @@ export async function POST(req: NextRequest) {
   }
 
   const apiKey = process.env.RESEND_API_KEY
-  if (!apiKey) {
-    console.log('Subscribe attempt (no Resend key):', email)
+  const audienceId = process.env.RESEND_AUDIENCE_ID
+
+  if (!apiKey || !audienceId) {
+    console.log('Subscribe attempt (Resend not configured):', email)
     return NextResponse.redirect(new URL('/?subscribe=ok', req.url))
   }
 
   try {
-    await fetch('https://api.resend.com/audiences/your-audience-id/contacts', {
+    await fetch(`https://api.resend.com/audiences/${audienceId}/contacts`, {
       method: 'POST',
       headers: { 'Authorization': `Bearer ${apiKey}`, 'Content-Type': 'application/json' },
       body: JSON.stringify({ email, unsubscribed: false }),
