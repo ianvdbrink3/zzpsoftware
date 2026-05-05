@@ -9,6 +9,12 @@
     "affiliateNetwork": "direct",
     "commissionEur": 55,
     "commissionType": "CPA",
+    "reviewText": {
+      "intro": "Moneybird is al jaren de meest besproken boekhoudapp in Nederland, en niet zonder reden. De app werd van de grond af opgebouwd met de ZZP'er als gebruiker in gedachten — geen onnodige complexiteit, maar ook niet zo beperkt dat je er snel tegenaan loopt. Het gratis plan maakt het bovendien vrijwel risicoloos om te proberen.",
+      "gebruiksgemak": "Wat Moneybird onderscheidt, is het design. Waar veel boekhoudprogramma's aanvoelen als software uit 2010, werkt Moneybird als een moderne app. Onboarding duurt letterlijk minuten: je verbindt je bank, maakt je eerste factuur aan en stuurt die direct. De interface is opgeruimd, de termen zijn begrijpelijk (geen boekhouderjargon), en de mobiele app werkt net zo soepel als de desktopversie.",
+      "functies": "Voor de meeste ZZP'ers dekt Moneybird alles wat nodig is: factureren met automatische herinneringen, bankimport en -reconciliatie, BTW-aangifte voorbereiden en indienen, offertes omzetten naar facturen, en een overzichtelijk financieel dashboard. De directe koppeling met de Belastingdienst is een groot pluspunt — je BTW-aangifte versturen kost twee klikken. Wat ontbreekt: urenregistratie zit er niet ingebakken, en projectbeheer is beperkt in de goedkopere plannen.",
+      "prijs": "Het gratis plan is heel bruikbaar voor ZZP'ers die net beginnen of weinig facturen sturen (maximaal 5 per maand). Wie meer volume heeft, stapt over op het ZZP-plan van €14 per maand — dat is voor de meeste freelancers de juiste keuze. Vergeleken met Exact Online of Twinfield is dat zeer betaalbaar; tegenover Jortt of e-Boekhouden is het iets duurder, maar de gebruikservaring is navenant beter."
+    },
     "pricing": {
       "free": true,
       "freeTrial": 30,
@@ -36,6 +42,12 @@
     "affiliateNetwork": "daisycon",
     "commissionEur": 45,
     "commissionType": "CPA",
+    "reviewText": {
+      "intro": "Snelstart bestaat al decennia en heeft een grote, trouwe gebruikersbasis in Nederland opgebouwd. Het is geen hippe startup-app, maar een degelijk boekhoudpakket dat zijn werk doet. Wie eerder met boekhoudprogramma's heeft gewerkt of wat meer functies nodig heeft dan een simpele factuurapp biedt, zit bij Snelstart goed.",
+      "gebruiksgemak": "De interface van Snelstart is functioneel, maar voelt wat ouder aan dan die van Moneybird of Jortt. Er is een leercurve: de eerste keer dat je inlogt, krijg je direct een uitgebreid menu voorgeschoteld. Eenmaal gewend aan de structuur werkt het vlot. Snelstart biedt ook een desktopvariant naast de cloudversie, wat sommige gebruikers prettig vinden als ze liever niet volledig afhankelijk zijn van een internetverbinding.",
+      "functies": "Snelstart scoort hoog op functies. Het Start-plan dekt de basis: factureren, basisboekhouding en BTW-aangifte. Het Plus-plan voegt offertes, inkoopfacturen en bankimport toe — vrijwel alles wat een ZZP'er nodig heeft. Op het Pro-niveau zijn voorraadbeheer en meerdere gebruikers beschikbaar, interessant voor kleine bedrijven. De bankimport werkt stabiel met alle grote Nederlandse banken.",
+      "prijs": "Met een startprijs van €9 per maand is Snelstart een van de betaalbaardere keuzes voor wie meer functies nodig heeft dan Jortt biedt. Het Plus-plan (€19/mnd) is voor de meeste ZZP'ers de realistisch benodigde versie. Dat is iets meer dan Moneybird's ZZP-plan, maar Snelstart biedt ook meer boekhoudkundige diepgang voor wie dat wil."
+    },
     "pricing": {
       "free": false, "freeTrial": 30,
       "plans": [
@@ -62,6 +74,12 @@
     "affiliateNetwork": "direct",
     "commissionEur": 40,
     "commissionType": "CPA",
+    "reviewText": {
+      "intro": "Jortt is de minimalistische keuze in de wereld van boekhoudapps. De makers hebben bewust gekozen voor eenvoud boven volledigheid: liever tien functies die feilloos werken dan dertig functies waarvan de helft verwarrend is. Dat filosofie trekt precies de juiste doelgroep aan — ZZP'ers die gewoon hun werk willen doen en zo min mogelijk tijd aan de administratie willen besteden.",
+      "gebruiksgemak": "Jortt scoort het hoogst van alle geteste programma's op gebruiksgemak, en dat is te merken. Aanmelden, een factuur aanmaken en versturen gaat in minder dan vijf minuten. De interface heeft geen overbodige menu's of verwarrende termen. De onboarding-wizard begeleidt je stap voor stap. Ook voor mensen die nog nooit met boekhoudprogramma's hebben gewerkt, is Jortt vrijwel direct te begrijpen.",
+      "functies": "Jortt doet wat het belooft: factureren, bankimport, BTW-aangifte en een overzicht van je financiën. Wat ontbreekt: er is geen offertemodule, de rapportages zijn beperkt, en een API is er niet. Voor veel ZZP'ers is dat prima — zolang je facturen stuurt en je BTW bijhoudt, heb je de rest niet nodig. Wie wél offertes stuurt of complexere projectboekhouding nodig heeft, loopt bij Jortt snel tegen de grenzen aan.",
+      "prijs": "Het Starter-plan van €7 per maand is het goedkoopste instappunt onder de betaalde programma's. Daarmee is Jortt een uitstekende keuze voor ZZP'ers die net beginnen of weinig factureren. Het ZZP-plan (€15/mnd) met onbeperkt factureren is voor de meeste freelancers de logische keuze. Geen verborgen kosten, geen complex planstelsel."
+    },
     "pricing": {
       "free": false, "freeTrial": 30,
       "plans": [
@@ -87,6 +105,12 @@
     "affiliateNetwork": "direct",
     "commissionEur": 120,
     "commissionType": "lead",
+    "reviewText": {
+      "intro": "Exact Online is de zakelijkste keuze op deze lijst. Waar Jortt en Moneybird zich richten op de ZZP'er die snel wil beginnen, is Exact Online gebouwd voor ondernemers die groeien, samenwerken met een accountant, of complexe financiële processen hebben. De naam Exact is in de Nederlandse accountancy synoniem voor 'serieuze boekhouding'.",
+      "gebruiksgemak": "Exact Online is niet het makkelijkste programma om mee te beginnen. De interface is uitgebreid en kan overweldigend zijn als je gewend bent aan de eenvoud van Moneybird of Jortt. Dat is bewust: het pakket is gemaakt voor mensen met boekhoudkundige kennis, of voor ZZP'ers die nauw samenwerken met een accountant die de technische kant beheert. Eenmaal ingewerkt werkt het efficiënt.",
+      "functies": "Op functies scoort Exact Online het hoogst van allemaal. Uitgebreide rapportages, projectbeheer, urenregistratie, budgettering, koppeling met honderden externe tools via de API, en naadloze samenwerking met accountants die Exact gebruiken. Voor een ZZP'er die puur wil factureren is het overdreven; voor wie groeit naar een klein bedrijf is het precies goed.",
+      "prijs": "Exact Online is de duurste optie voor ZZP'ers: het Essentials-plan begint bij €39 per maand. Dat is meer dan driemaal de prijs van Jortt. Of die meerprijs gerechtvaardigd is, hangt volledig af van je behoefte. Werk je met een accountant die Exact gebruikt en heb je complexe projectboekhouding? Dan absoluut. Ben je een eenpitter die facturen stuurt? Dan zijn Moneybird of Jortt logischere keuzes."
+    },
     "pricing": {
       "free": false, "freeTrial": 30,
       "plans": [
@@ -112,6 +136,12 @@
     "affiliateNetwork": "tradetracker",
     "commissionEur": 20,
     "commissionType": "CPA",
+    "reviewText": {
+      "intro": "e-Boekhouden.nl bestaat al meer dan 20 jaar en is door die lange staat van dienst een vertrouwde naam geworden. Het heeft al die tijd één duidelijk voordeel vastgehouden: het is verreweg de goedkoopste complete boekhoudoplossing van Nederland. Wie prijs boven alles stelt en geen behoefte heeft aan een strakke moderne interface, vindt hier zijn gading.",
+      "gebruiksgemak": "Eerlijk is eerlijk: de interface van e-Boekhouden.nl oogt gedateerd. Het voelt aan als software die in de vroege jaren 2010 is gebouwd en sindsdien functioneel is bijgehouden maar nooit fundamenteel vernieuwd. Navigeren gaat via een klassiek menu, tabbladen en subpagina's. Voor wie gewend is aan modernere apps vergt het een aanpassingsperiode. Voor wie al jaren met vergelijkbare software werkt, zal het vertrouwd aanvoelen.",
+      "functies": "Ondanks het gedateerde uiterlijk biedt e-Boekhouden.nl een verrassend compleet pakket. Onbeperkt factureren, BTW-aangifte, bankimport, offertes en een uitgebreide administratie — allemaal aanwezig in het Solo-plan van €8 per maand. Dat is opmerkelijk voor die prijs. De API is beschikbaar voor koppelingen met andere tools. Wat ontbreekt: urenregistratie en projectbeheer zitten er niet in.",
+      "prijs": "Hier wint e-Boekhouden.nl het van de concurrentie. €8 per maand voor een compleet boekhoudpakket is nergens goedkoper te vinden. Voor ZZP'ers die budgetbewust zijn en geen affiniteit hebben met mooie interfaces, is dit een rationele keuze. Het Basis-plan (€12/mnd) voegt offertes en een extra gebruiker toe."
+    },
     "pricing": {
       "free": false, "freeTrial": 30,
       "plans": [
@@ -137,6 +167,12 @@
     "affiliateNetwork": "direct",
     "commissionEur": 90,
     "commissionType": "lead",
+    "reviewText": {
+      "intro": "Twinfield is van Wolters Kluwer, een van de grootste namen in financiële software wereldwijd. Het pakket is ontworpen voor organisaties die serieuze boekhoudkundige eisen stellen: meerdere valuta, geconsolideerde rapportages, uitgebreide auditing. Dat het ook beschikbaar is voor ZZP'ers zegt meer over de flexibiliteit van het platform dan dat het specifiek op die doelgroep is gericht.",
+      "gebruiksgemak": "Twinfield is niet het meest toegankelijke pakket voor de gemiddelde ZZP'er. De interface is functioneel en professioneel, maar vraagt boekhoudkundige basiskennis om goed te kunnen gebruiken. De onboarding is minder intuïtief dan bij Moneybird of Jortt. Twinfield werkt het best in combinatie met een accountant die het platform al kent en de configuratie voor je doet.",
+      "functies": "Op functies staat Twinfield samen met Exact Online bovenaan. Naast de standaard facturatie en BTW-aangifte biedt het: meerdere valuta, consolidatie over meerdere entiteiten, uitgebreide auditfuncties, urenregistratie en projectadministratie, en een krachtige API. Voor een ZZP'er die eenvoudig wil factureren is dit ver overkill. Voor wie snel groeit of internationale klanten heeft, is het juist prettig dat het platform meegroeit.",
+      "prijs": "Twinfield begint bij €25 per maand — meer dan Jortt of Snelstart, minder dan Exact Online. De meerprijs ten opzichte van eenvoudigere pakketten is alleen gerechtvaardigd als je ook gebruikmaakt van de extra mogelijkheden. Ga je het kopen als simpele factuurapp, dan betaal je voor functies die je nooit gebruikt."
+    },
     "pricing": {
       "free": false, "freeTrial": 30,
       "plans": [

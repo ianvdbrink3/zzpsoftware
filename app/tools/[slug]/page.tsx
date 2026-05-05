@@ -11,8 +11,8 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const tool = getToolBySlug(slug)
   if (!tool) return {}
   return {
-    title: `${tool.name} Review 2026 — Eerlijke beoordeling`,
-    description: `Lees onze uitgebreide ${tool.name} review. Functies, prijzen, voor- en nadelen.`,
+    title: `${tool.name} Review 2026 — Eerlijke beoordeling voor ZZP'ers`,
+    description: `Uitgebreide ${tool.name} review: gebruiksgemak, functies, prijzen en voor wie het geschikt is. Onze eerlijke beoordeling voor ZZP'ers.`,
   }
 }
 
@@ -28,6 +28,17 @@ function ScoreRow({ label, score }: { label: string; score: number }) {
   )
 }
 
+const FEATURE_LABELS: Record<string, string> = {
+  btwAangifte: 'BTW-aangifte',
+  bankKoppeling: 'Bankkoppeling',
+  mobieleApp: 'Mobiele app',
+  offertes: 'Offertes',
+  urenRegistratie: 'Urenregistratie',
+  projecten: 'Projecten',
+  api: 'API',
+  gratisPlan: 'Gratis plan',
+}
+
 export default async function ToolPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params
   const tool = getToolBySlug(slug)
@@ -40,7 +51,7 @@ export default async function ToolPage({ params }: { params: Promise<{ slug: str
         <a href="/" style={{ color: 'var(--text-tertiary)' }}>Home</a> / <a href="/boekhoudprogramma" style={{ color: 'var(--text-tertiary)' }}>Boekhoudprogramma's</a> / {tool.name}
       </div>
 
-      <div style={{ display: 'flex', gap: 20, alignItems: 'flex-start', marginBottom: 32, flexWrap: 'wrap' }}>
+      <div style={{ display: 'flex', gap: 20, alignItems: 'flex-start', marginBottom: 8, flexWrap: 'wrap' }}>
         <div style={{ width: 64, height: 64, borderRadius: 14, background: 'var(--bg-subtle)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 28, fontWeight: 700, color: 'var(--accent)', flexShrink: 0 }}>{tool.name[0]}</div>
         <div style={{ flex: 1 }}>
           <h1 style={{ fontSize: 32, fontWeight: 700, margin: '0 0 4px' }}>{tool.name} Review 2026</h1>
@@ -51,11 +62,37 @@ export default async function ToolPage({ params }: { params: Promise<{ slug: str
             <span style={{ color: 'var(--text-tertiary)', fontSize: 13 }}>({tool.reviewCount} beoordelingen)</span>
           </div>
         </div>
-        <div style={{ textAlign: 'right' }}>
-          <div style={{ fontSize: 28, fontWeight: 700, color: cheapest === 0 ? 'var(--accent)' : 'var(--text)' }}>{cheapest === 0 ? 'Gratis' : `€${cheapest}/mnd`}</div>
-          {tool.pricing.freeTrial > 0 && <div style={{ fontSize: 13, color: 'var(--accent)', marginTop: 4 }}>✓ {tool.pricing.freeTrial} dagen gratis</div>}
-          <a href={tool.affiliateUrl} className="btn-primary" style={{ marginTop: 12, display: 'inline-flex' }}>Probeer {tool.name} gratis →</a>
+      </div>
+
+      <div style={{ display: 'flex', gap: 8, marginBottom: 40, fontSize: 13, color: 'var(--text-tertiary)', flexWrap: 'wrap' }}>
+        <span>📅 Bijgewerkt mei 2026</span><span>·</span><span>⏱ 5 min leestijd</span>
+        {tool.pricing.freeTrial > 0 && <><span>·</span><span style={{ color: 'var(--accent)' }}>✓ {tool.pricing.freeTrial} dagen gratis proberen</span></>}
+      </div>
+
+      <div className="prose" style={{ marginBottom: 40 }}>
+        <p style={{ fontSize: 17, lineHeight: 1.8 }}>{tool.reviewText.intro}</p>
+      </div>
+
+      <div className="card" style={{ padding: '20px 24px', marginBottom: 40, background: 'var(--accent-light)', border: '1px solid var(--accent)' }}>
+        <div style={{ fontWeight: 600, marginBottom: 12, color: 'var(--accent-text)' }}>In het kort</div>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: 8 }}>
+          {Object.entries(tool.features).filter(([, v]) => v).map(([k]) => (
+            <div key={k} style={{ display: 'flex', gap: 8, fontSize: 14, color: 'var(--accent-text)' }}>
+              <span style={{ flexShrink: 0 }}>✓</span><span>{FEATURE_LABELS[k] ?? k}</span>
+            </div>
+          ))}
         </div>
+      </div>
+
+      <div className="prose" style={{ marginBottom: 40 }}>
+        <h2>Gebruiksgemak</h2>
+        <p>{tool.reviewText.gebruiksgemak}</p>
+
+        <h2>Functies</h2>
+        <p>{tool.reviewText.functies}</p>
+
+        <h2>Prijs en waarde</h2>
+        <p>{tool.reviewText.prijs}</p>
       </div>
 
       <div className="card" style={{ padding: 24, marginBottom: 24 }}>
@@ -80,15 +117,16 @@ export default async function ToolPage({ params }: { params: Promise<{ slug: str
         </div>
       </div>
 
-      <div className="card" style={{ padding: 20, marginBottom: 24 }}>
-        <h3 style={{ fontSize: 15, fontWeight: 600, marginTop: 0, marginBottom: 12 }}>Beste keuze voor...</h3>
+      <div className="card" style={{ padding: 20, marginBottom: 40 }}>
+        <h3 style={{ fontSize: 15, fontWeight: 600, marginTop: 0, marginBottom: 12 }}>Voor wie is {tool.name} het beste?</h3>
         <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>
           {tool.bestFor.map(b => <span key={b} className="badge badge-green">{b}</span>)}
         </div>
       </div>
 
-      <div style={{ marginBottom: 32 }}>
-        <h2 style={{ fontSize: 22, fontWeight: 700, marginBottom: 16 }}>Prijzen {tool.name}</h2>
+      <div style={{ borderTop: '2px solid var(--border)', marginBottom: 40, paddingTop: 40 }}>
+        <h2 style={{ fontSize: 22, fontWeight: 700, marginTop: 0, marginBottom: 4 }}>Prijzen {tool.name}</h2>
+        <p style={{ color: 'var(--text-secondary)', fontSize: 14, marginBottom: 24 }}>Alle plannen hebben een gratis proefperiode van {tool.pricing.freeTrial} dagen.</p>
         <div style={{ display: 'grid', gridTemplateColumns: `repeat(${tool.pricing.plans.length}, 1fr)`, gap: 14 }}>
           {tool.pricing.plans.map((plan, i) => (
             <div key={plan.name} className="card" style={{ padding: 20, border: i === 1 ? '2px solid var(--accent)' : undefined, position: 'relative' }}>

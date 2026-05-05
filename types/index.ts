@@ -31,6 +31,13 @@ export interface ToolScore {
   overall: number
 }
 
+export interface ToolReviewText {
+  intro: string
+  gebruiksgemak: string
+  functies: string
+  prijs: string
+}
+
 export interface Tool {
   slug: string
   name: string
@@ -41,6 +48,7 @@ export interface Tool {
   affiliateNetwork: string
   commissionEur: number
   commissionType: string
+  reviewText: ToolReviewText
   pricing: ToolPricing
   rating: number
   reviewCount: number
