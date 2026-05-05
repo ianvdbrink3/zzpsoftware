@@ -25,9 +25,17 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         )}
         <header style={{ background: 'var(--bg-card)', borderBottom: '1px solid var(--border)', position: 'sticky', top: 0, zIndex: 50 }}>
           <div style={{ maxWidth: 1100, margin: '0 auto', padding: '0 24px', height: 60, display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-            <a href="/" style={{ display: 'flex', alignItems: 'center', gap: 4, fontWeight: 600, fontSize: 16 }}>
-              <span style={{ background: 'var(--accent)', color: '#fff', padding: '3px 8px', borderRadius: 6, fontSize: 13, fontWeight: 700 }}>Slim</span>
-              <span>Boekhoud.nl</span>
+            <a href="/" style={{ display: 'flex', alignItems: 'center', gap: 10, textDecoration: 'none' }}>
+              <div style={{ width: 32, height: 32, background: 'var(--accent)', borderRadius: 8, display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                  <rect x="2" y="9" width="3" height="5" rx="1" fill="white" />
+                  <rect x="6.5" y="5" width="3" height="9" rx="1" fill="white" opacity="0.85" />
+                  <rect x="11" y="2" width="3" height="12" rx="1" fill="white" opacity="0.7" />
+                </svg>
+              </div>
+              <span style={{ fontSize: 17, fontWeight: 700, letterSpacing: '-0.3px', color: 'var(--text)' }}>
+                <span style={{ color: 'var(--accent)' }}>Slim</span>Boekhoud<span style={{ color: 'var(--text-tertiary)', fontWeight: 400, fontSize: 15 }}>.nl</span>
+              </span>
             </a>
             <nav style={{ display: 'flex', gap: 4 }}>
               {[['/', 'Home'], ['/boekhoudprogramma', 'Boekhouden'], ['/factuurprogramma', 'Facturatie'], ['/vergelijk', 'Vergelijk'], ['/gids', 'Gidsen']].map(([href, label]) => (
