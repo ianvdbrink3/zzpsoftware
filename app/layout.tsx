@@ -26,8 +26,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <header style={{ background: 'var(--bg-card)', borderBottom: '1px solid var(--border)', position: 'sticky', top: 0, zIndex: 50 }}>
           <div style={{ maxWidth: 1100, margin: '0 auto', padding: '0 24px', height: 60, display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
             <a href="/" style={{ display: 'flex', alignItems: 'center', gap: 4, fontWeight: 600, fontSize: 16 }}>
-              <span style={{ background: 'var(--accent)', color: '#fff', padding: '3px 8px', borderRadius: 6, fontSize: 13, fontWeight: 700 }}>SlimBoekhoud</span>
-              <span style={{ color: 'var(--text-tertiary)', fontWeight: 400 }}>.nl</span>
+              <span style={{ background: 'var(--accent)', color: '#fff', padding: '3px 8px', borderRadius: 6, fontSize: 13, fontWeight: 700 }}>Slim</span>
+              <span>Boekhoud.nl</span>
             </a>
             <nav style={{ display: 'flex', gap: 4 }}>
               {[['/', 'Home'], ['/boekhoudprogramma', 'Boekhouden'], ['/factuurprogramma', 'Facturatie'], ['/vergelijk', 'Vergelijk'], ['/gids', 'Gidsen']].map(([href, label]) => (
