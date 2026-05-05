@@ -1,76 +1,114 @@
-import { getAllTools, getToolBySlug, formatPrice } from "@/lib/tools";
-import { notFound } from "next/navigation";
-export async function generateStaticParams() { return getAllTools().map((t) => ({ slug: t.slug })); }
-export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
-  const { slug } = await params;
-  const tool = getToolBySlug(slug);
-  if (!tool) return {};
-  return { title: `${tool.name} Review 2025`, description: tool.description };
+import { getToolBySlug, getToolsSortedByRating, getCheapestPlan } from '@/lib/tools'
+import { notFound } from 'next/navigation'
+import type { Metadata } from 'next'
+
+export async function generateStaticParams() {
+  return getToolsSortedByRating().map(t => ({ slug: t.slug }))
 }
-export default async function ToolPage({ params }: { params: Promise<{ slug: string }> }) {
-  const { slug } = await params;
-  const tool = getToolBySlug(slug);
-  if (!tool) notFound();
+
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+  const { slug } = await params
+  const tool = getToolBySlug(slug)
+  if (!tool) return {}
+  return {
+    title: `${tool.name} Review 2026 — Eerlijke beoordeling`,
+    description: `Lees onze uitgebreide ${tool.name} review. Functies, prijzen, voor- en nadelen.`,
+  }
+}
+
+function ScoreRow({ label, score }: { label: string; score: number }) {
   return (
-    <div className="container" style={{padding:"3rem 1.5rem"}}>
-      <div style={{display:"flex",alignItems:"flex-start",gap:"1.5rem",marginBottom:"2rem",flexWrap:"wrap"}}>
-        <div style={{flex:1}}>
-          <div style={{display:"flex",alignItems:"center",gap:"1rem",marginBottom:".5rem"}}>
-            <h1 style={{fontSize:"2.5rem",fontWeight:800}}>{tool.name}</h1>
-            {tool.badge && <span className="badge">{tool.badge}</span>}
-          </div>
-          <p style={{fontSize:"1.2rem",color:"#64748b",marginBottom:"1.5rem"}}>{tool.tagline}</p>
-          <a href={tool.affiliateUrl} className="btn-primary" target="_blank" rel="noopener noreferrer">Probeer {tool.name} gratis &#8594;</a>
-        </div>
-        <div className="card" style={{textAlign:"center",minWidth:"160px"}}>
-          <div style={{fontSize:"3rem",fontWeight:800,color:"#2563eb"}}>{tool.scores.overall}</div>
-          <div style={{color:"#64748b"}}>Totaalscore</div>
-          <div style={{marginTop:"1rem",fontSize:".9rem",color:"#64748b"}}>Vanaf {formatPrice(tool.pricing.startingPrice)}</div>
-        </div>
+    <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 10 }}>
+      <span style={{ fontSize: 13, color: 'var(--text-secondary)', width: 120, flexShrink: 0 }}>{label}</span>
+      <div className="score-bar" style={{ flex: 1 }}>
+        <div className="score-bar-fill" style={{ width: `${(score / 5) * 100}%` }} />
       </div>
-      <div className="grid-2" style={{marginBottom:"2rem"}}>
-        <div className="card">
-          <h2 style={{marginBottom:"1rem"}}>Scores</h2>
-          {Object.entries({Gebruiksgemak:tool.scores.easeOfUse,Functies:tool.scores.features,Support:tool.scores.support,"Prijs/kwaliteit":tool.scores.valueForMoney}).map(([k,v])=>(
-            <div key={k} style={{marginBottom:"1rem"}}>
-              <div style={{display:"flex",justifyContent:"space-between",marginBottom:".25rem"}}><span style={{fontSize:".9rem"}}>{k}</span><span style={{fontWeight:600}}>{v}/10</span></div>
-              <div className="score-bar"><div className="score-fill" style={{width:`${v*10}%`}}></div></div>
-            </div>
-          ))}
-        </div>
-        <div className="card">
-          <h2 style={{marginBottom:"1rem"}}>Functies</h2>
-          <div style={{display:"grid",gridTemplateColumns:"1fr 1fr",gap:".5rem"}}>
-            {Object.entries({BTW:tool.features.btwAangifte,Facturen:tool.features.facturen,Bank:tool.features.bankKoppeling,Uren:tool.features.urenRegistratie,Projecten:tool.features.projectAdministratie,Offertes:tool.features.offertes,Mobiel:tool.features.mobileApp,API:tool.features.api}).map(([k,v])=>(
-              <div key={k} style={{display:"flex",alignItems:"center",gap:".5rem",fontSize:".9rem"}}>
-                <span style={{color:v?"#16a34a":"#ef4444"}}>{v?"✓":"✗"}</span>{k}
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
-      <div className="grid-2" style={{marginBottom:"2rem"}}>
-        <div className="card">
-          <h2 style={{marginBottom:"1rem",color:"#16a34a"}}>Voordelen</h2>
-          {tool.pros.map((p,i)=><div key={i} style={{display:"flex",gap:".5rem",marginBottom:".5rem",fontSize:".95rem"}}><span style={{color:"#16a34a",flexShrink:0}}>✓</span>{p}</div>)}
-        </div>
-        <div className="card">
-          <h2 style={{marginBottom:"1rem",color:"#ef4444"}}>Nadelen</h2>
-          {tool.cons.map((c,i)=><div key={i} style={{display:"flex",gap:".5rem",marginBottom:".5rem",fontSize:".95rem"}}><span style={{color:"#ef4444",flexShrink:0}}>✗</span>{c}</div>)}
-        </div>
-      </div>
-      <div className="card" style={{marginBottom:"2rem"}}>
-        <h2 style={{marginBottom:"1.5rem"}}>Prijzen</h2>
-        <div style={{display:"flex",gap:"1rem",flexWrap:"wrap"}}>
-          {tool.pricing.plans.map((plan,i)=>(
-            <div key={i} style={{flex:1,minWidth:"200px",border:"1px solid #e2e8f0",borderRadius:"8px",padding:"1.25rem"}}>
-              <h3 style={{marginBottom:".5rem"}}>{plan.name}</h3>
-              <div style={{fontSize:"1.75rem",fontWeight:800,color:"#2563eb",marginBottom:"1rem"}}>{formatPrice(plan.price)}</div>
-              {plan.features.map((f,j)=><div key={j} style={{fontSize:".9rem",marginBottom:".25rem",display:"flex",gap:".5rem"}}><span style={{color:"#16a34a"}}>✓</span>{f}</div>)}
-            </div>
-          ))}
-        </div>
-      </div>
+      <span style={{ fontSize: 14, fontWeight: 600, width: 28, textAlign: 'right' }}>{score}</span>
     </div>
-  );
+  )
+}
+
+export default async function ToolPage({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params
+  const tool = getToolBySlug(slug)
+  if (!tool) notFound()
+  const cheapest = getCheapestPlan(tool)
+
+  return (
+    <div style={{ maxWidth: 820, margin: '0 auto', padding: '48px 24px' }}>
+      <div style={{ fontSize: 13, color: 'var(--text-tertiary)', marginBottom: 24 }}>
+        <a href="/" style={{ color: 'var(--text-tertiary)' }}>Home</a> / <a href="/boekhoudprogramma" style={{ color: 'var(--text-tertiary)' }}>Boekhoudprogramma's</a> / {tool.name}
+      </div>
+
+      <div style={{ display: 'flex', gap: 20, alignItems: 'flex-start', marginBottom: 32, flexWrap: 'wrap' }}>
+        <div style={{ width: 64, height: 64, borderRadius: 14, background: 'var(--bg-subtle)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 28, fontWeight: 700, color: 'var(--accent)', flexShrink: 0 }}>{tool.name[0]}</div>
+        <div style={{ flex: 1 }}>
+          <h1 style={{ fontSize: 32, fontWeight: 700, margin: '0 0 4px' }}>{tool.name} Review 2026</h1>
+          <p style={{ margin: 0, color: 'var(--text-secondary)', fontSize: 16 }}>{tool.tagline}</p>
+          <div style={{ display: 'flex', gap: 8, marginTop: 10, alignItems: 'center' }}>
+            <span className="stars">{[1,2,3,4,5].map(i => <span key={i} style={{ opacity: i <= Math.round(tool.rating) ? 1 : 0.25 }}>★</span>)}</span>
+            <span style={{ fontWeight: 700, fontSize: 16 }}>{tool.rating}</span>
+            <span style={{ color: 'var(--text-tertiary)', fontSize: 13 }}>({tool.reviewCount} beoordelingen)</span>
+          </div>
+        </div>
+        <div style={{ textAlign: 'right' }}>
+          <div style={{ fontSize: 28, fontWeight: 700, color: cheapest === 0 ? 'var(--accent)' : 'var(--text)' }}>{cheapest === 0 ? 'Gratis' : `€${cheapest}/mnd`}</div>
+          {tool.pricing.freeTrial > 0 && <div style={{ fontSize: 13, color: 'var(--accent)', marginTop: 4 }}>✓ {tool.pricing.freeTrial} dagen gratis</div>}
+          <a href={tool.affiliateUrl} className="btn-primary" style={{ marginTop: 12, display: 'inline-flex' }}>Probeer {tool.name} gratis →</a>
+        </div>
+      </div>
+
+      <div className="card" style={{ padding: 24, marginBottom: 24 }}>
+        <h2 style={{ fontSize: 18, fontWeight: 600, marginBottom: 16, marginTop: 0 }}>Onze beoordeling</h2>
+        <ScoreRow label="Gebruiksgemak" score={tool.score.gebruiksgemak} />
+        <ScoreRow label="Functies" score={tool.score.functies} />
+        <ScoreRow label="Prijs-kwaliteit" score={tool.score.prijs} />
+        <ScoreRow label="Klantenservice" score={tool.score.support} />
+        <div style={{ borderTop: '1px solid var(--border)', paddingTop: 14, marginTop: 14 }}>
+          <ScoreRow label="Overall" score={tool.score.overall} />
+        </div>
+      </div>
+
+      <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16, marginBottom: 24 }}>
+        <div className="card" style={{ padding: 20 }}>
+          <h3 style={{ fontSize: 15, fontWeight: 600, color: 'var(--accent)', marginTop: 0, marginBottom: 12 }}>✓ Voordelen</h3>
+          {tool.pros.map(p => <div key={p} style={{ display: 'flex', gap: 8, marginBottom: 8, fontSize: 14 }}><span style={{ color: 'var(--accent)', flexShrink: 0 }}>✓</span><span style={{ color: 'var(--text-secondary)' }}>{p}</span></div>)}
+        </div>
+        <div className="card" style={{ padding: 20 }}>
+          <h3 style={{ fontSize: 15, fontWeight: 600, color: 'var(--red)', marginTop: 0, marginBottom: 12 }}>✗ Nadelen</h3>
+          {tool.cons.map(c => <div key={c} style={{ display: 'flex', gap: 8, marginBottom: 8, fontSize: 14 }}><span style={{ color: 'var(--red)', flexShrink: 0 }}>✗</span><span style={{ color: 'var(--text-secondary)' }}>{c}</span></div>)}
+        </div>
+      </div>
+
+      <div className="card" style={{ padding: 20, marginBottom: 24 }}>
+        <h3 style={{ fontSize: 15, fontWeight: 600, marginTop: 0, marginBottom: 12 }}>Beste keuze voor...</h3>
+        <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>
+          {tool.bestFor.map(b => <span key={b} className="badge badge-green">{b}</span>)}
+        </div>
+      </div>
+
+      <div style={{ marginBottom: 32 }}>
+        <h2 style={{ fontSize: 22, fontWeight: 700, marginBottom: 16 }}>Prijzen {tool.name}</h2>
+        <div style={{ display: 'grid', gridTemplateColumns: `repeat(${tool.pricing.plans.length}, 1fr)`, gap: 14 }}>
+          {tool.pricing.plans.map((plan, i) => (
+            <div key={plan.name} className="card" style={{ padding: 20, border: i === 1 ? '2px solid var(--accent)' : undefined, position: 'relative' }}>
+              {i === 1 && <div style={{ position: 'absolute', top: -11, left: '50%', transform: 'translateX(-50%)', background: 'var(--accent)', color: '#fff', fontSize: 11, fontWeight: 700, padding: '2px 10px', borderRadius: 20 }}>Populairste</div>}
+              <div style={{ fontWeight: 600, marginBottom: 8 }}>{plan.name}</div>
+              <div style={{ fontSize: 26, fontWeight: 700, marginBottom: 4 }}>{plan.price === 0 ? <span style={{ color: 'var(--accent)' }}>Gratis</span> : `€${plan.price}`}</div>
+              {plan.price > 0 && <div style={{ fontSize: 12, color: 'var(--text-tertiary)', marginBottom: 14 }}>per {plan.per}</div>}
+              {plan.features.map(f => <div key={f} style={{ fontSize: 13, color: 'var(--text-secondary)', marginBottom: 6, display: 'flex', gap: 6 }}><span style={{ color: 'var(--accent)' }}>✓</span>{f}</div>)}
+              <a href={tool.affiliateUrl} className={i === 1 ? 'btn-primary' : 'btn-secondary'} style={{ marginTop: 16, width: '100%', justifyContent: 'center' }}>Kies {plan.name}</a>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <div style={{ background: 'var(--accent-light)', border: '1px solid var(--accent)', borderRadius: 16, padding: '28px 32px', textAlign: 'center' }}>
+        <h3 style={{ fontSize: 20, fontWeight: 700, marginTop: 0, marginBottom: 8, color: 'var(--accent-text)' }}>Klaar om {tool.name} te proberen?</h3>
+        <p style={{ color: 'var(--accent-text)', margin: '0 0 20px', opacity: 0.8 }}>{tool.pricing.freeTrial > 0 ? `Start je gratis proefperiode van ${tool.pricing.freeTrial} dagen. Geen creditcard vereist.` : 'Bekijk de huidige aanbiedingen en start vandaag.'}</p>
+        <a href={tool.affiliateUrl} className="btn-primary" style={{ fontSize: 15, padding: '12px 28px' }}>Probeer {tool.name} gratis →</a>
+      </div>
+      <p style={{ fontSize: 12, color: 'var(--text-tertiary)', marginTop: 12, textAlign: 'center' }}>* Affiliate link — wij ontvangen een vergoeding als je via deze link een abonnement afsluit.</p>
+    </div>
+  )
 }

@@ -1,30 +1,68 @@
-import type { Metadata } from "next";
-import "./globals.css";
-export const metadata: Metadata = {title:{default:"ZZP Software Vergelijker - Beste Boekhoudprogramma 2025",template:"%s | ZZP Software Vergelijker"},description:"Vergelijk de beste boekhoudprogramma's voor ZZP'ers. Onafhankelijke reviews, prijzen en functionaliteiten."};
-export default function RootLayout({children}:{children:React.ReactNode}) {
+import type { Metadata } from 'next'
+import './globals.css'
+
+export const metadata: Metadata = {
+  title: { default: 'ZZP Software Vergelijker — Beste Boekhoudprogramma 2026', template: '%s | ZZP Software Vergelijker' },
+  description: "Vergelijk de beste boekhoudprogramma's, factuurapps en software voor ZZP'ers. Eerlijke reviews en onafhankelijk advies.",
+  metadataBase: new URL('https://zzpsoftware.nl'),
+}
+
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="nl">
       <body>
-        <header style={{background:"#fff",borderBottom:"1px solid #e2e8f0",position:"sticky",top:0,zIndex:100}}>
-          <div className="container" style={{display:"flex",alignItems:"center",justifyContent:"space-between",padding:"1rem 1.5rem"}}>
-            <a href="/" style={{fontWeight:700,fontSize:"1.25rem",color:"#2563eb",textDecoration:"none"}}>ZZP Software</a>
-            <nav style={{display:"flex",gap:"1.5rem"}}>
-              <a href="/boekhoudprogramma" style={{color:"#64748b",textDecoration:"none",fontSize:".95rem"}}>Vergelijk</a>
-              <a href="/gids" style={{color:"#64748b",textDecoration:"none",fontSize:".95rem"}}>Gidsen</a>
+        <header style={{ background: 'var(--bg-card)', borderBottom: '1px solid var(--border)', position: 'sticky', top: 0, zIndex: 50 }}>
+          <div style={{ maxWidth: 1100, margin: '0 auto', padding: '0 24px', height: 60, display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+            <a href="/" style={{ display: 'flex', alignItems: 'center', gap: 8, fontWeight: 600, fontSize: 16 }}>
+              <span style={{ background: 'var(--accent)', color: '#fff', padding: '3px 8px', borderRadius: 6, fontSize: 13, fontWeight: 700 }}>ZZP</span>
+              <span>Software Vergelijker</span>
+            </a>
+            <nav style={{ display: 'flex', gap: 4 }}>
+              {[['/', 'Home'], ['/boekhoudprogramma', 'Boekhouden'], ['/factuurprogramma', 'Facturatie'], ['/vergelijk', 'Vergelijk'], ['/gids', 'Gidsen']].map(([href, label]) => (
+                <a key={href} href={href} style={{ padding: '6px 12px', borderRadius: 8, fontSize: 14, color: 'var(--text-secondary)' }}>{label}</a>
+              ))}
             </nav>
           </div>
         </header>
         <main>{children}</main>
-        <footer style={{background:"#0f172a",color:"#94a3b8",padding:"3rem 0",marginTop:"4rem"}}>
-          <div className="container">
-            <div style={{display:"flex",justifyContent:"space-between",flexWrap:"wrap",gap:"2rem"}}>
-              <div><h3 style={{color:"#fff",marginBottom:".75rem"}}>ZZP Software</h3><p style={{fontSize:".9rem"}}>Onafhankelijke vergelijking van boekhoudprogramma's voor ZZP'ers.</p></div>
-              <div><h4 style={{color:"#fff",marginBottom:".75rem"}}>Links</h4><nav style={{display:"flex",flexDirection:"column",gap:".5rem"}}><a href="/boekhoudprogramma" style={{color:"#94a3b8",textDecoration:"none",fontSize:".9rem"}}>Boekhoudprogramma's</a><a href="/gids" style={{color:"#94a3b8",textDecoration:"none",fontSize:".9rem"}}>Gidsen</a></nav></div>
+        <footer style={{ borderTop: '1px solid var(--border)', marginTop: 80, padding: '48px 24px', background: 'var(--bg-card)' }}>
+          <div style={{ maxWidth: 1100, margin: '0 auto' }}>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: 40, marginBottom: 40 }}>
+              <div>
+                <div style={{ fontWeight: 700, marginBottom: 12 }}>ZZP Software Vergelijker</div>
+                <p style={{ fontSize: 13, color: 'var(--text-secondary)', lineHeight: 1.6, margin: 0 }}>
+                  Onafhankelijke vergelijkingssite voor ZZP-software. We verdienen een vergoeding als je via onze links koopt — dit beinvloedt onze reviews niet.
+                </p>
+              </div>
+              <div>
+                <div style={{ fontWeight: 600, fontSize: 13, marginBottom: 12, color: 'var(--text-secondary)' }}>CATEGORIEN</div>
+                {["Boekhoudprogramma's", "Factuurprogramma's", 'CRM-software', 'Urenregistratie'].map(l => (
+                  <div key={l} style={{ fontSize: 14, marginBottom: 6 }}><a style={{ color: 'var(--text-secondary)' }}>{l}</a></div>
+                ))}
+              </div>
+              <div>
+                <div style={{ fontWeight: 600, fontSize: 13, marginBottom: 12, color: 'var(--text-secondary)' }}>VERGELIJKINGEN</div>
+                {['Moneybird vs Snelstart', 'Moneybird vs Jortt', 'Exact vs Twinfield'].map(l => (
+                  <div key={l} style={{ fontSize: 14, marginBottom: 6 }}><a style={{ color: 'var(--text-secondary)' }}>{l}</a></div>
+                ))}
+              </div>
+              <div>
+                <div style={{ fontWeight: 600, fontSize: 13, marginBottom: 12, color: 'var(--text-secondary)' }}>GIDSEN</div>
+                {["Boekhouden als ZZP'er", 'BTW-aangifte', 'Factuur opmaken'].map(l => (
+                  <div key={l} style={{ fontSize: 14, marginBottom: 6 }}><a style={{ color: 'var(--text-secondary)' }}>{l}</a></div>
+                ))}
+              </div>
             </div>
-            <div style={{borderTop:"1px solid #1e293b",marginTop:"2rem",paddingTop:"1.5rem",fontSize:".85rem"}}>© 2025 ZZP Software Vergelijker. Affiliate links aanwezig.</div>
+            <div style={{ borderTop: '1px solid var(--border)', paddingTop: 20, display: 'flex', justifyContent: 'space-between', fontSize: 13, color: 'var(--text-tertiary)' }}>
+              <span>© 2026 ZZP Software Vergelijker</span>
+              <div style={{ display: 'flex', gap: 16 }}>
+                <a href="/privacy" style={{ color: 'var(--text-tertiary)' }}>Privacy</a>
+                <a href="/disclaimer" style={{ color: 'var(--text-tertiary)' }}>Disclaimer</a>
+              </div>
+            </div>
           </div>
         </footer>
       </body>
     </html>
-  );
+  )
 }

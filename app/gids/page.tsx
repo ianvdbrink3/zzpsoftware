@@ -1,18 +1,37 @@
-export const metadata={title:"ZZP Boekhoud Gidsen",description:"Handige gidsen voor ZZP boekhouding."};
-const guides=[{title:"Hoe kies je het beste boekhoudprogramma?",slug:"beste-boekhoudprogramma-kiezen",desc:"Stap voor stap gids om de juiste software te vinden voor jouw situatie."},{title:"BTW aangifte als ZZP'er",slug:"btw-aangifte-zzper",desc:"Alles over BTW-aangifte: wanneer, hoe en welke software helpt je hierbij."},{title:"Zelf boekhouden of uitbesteden?",slug:"zelf-boekhouden-of-uitbesteden",desc:"Vergelijk de voor- en nadelen van zelf boekhouden versus een boekhouder inhuren."},{title:"Kosten boekhoudprogramma aftrekken",slug:"kosten-boekhoudprogramma-aftrekken",desc:"Ontdek hoe je je boekhoudkosten als zakelijke kosten kunt opgeven."},{title:"Overstappen naar nieuw boekhoudprogramma",slug:"overstappen-boekhoudprogramma",desc:"Hoe je vlekkeloos kunt overstappen zonder gegevens te verliezen."},{title:"Boekhoudprogramma vergelijken: checklist",slug:"boekhoudprogramma-vergelijken-checklist",desc:"Gebruik onze checklist om programma's naast elkaar te leggen."}];
-export default function GidsPage(){
-  return(
-    <div className="container" style={{padding:"3rem 1.5rem"}}>
-      <h1 className="section-title">ZZP Boekhoud Gidsen</h1>
-      <p className="section-subtitle">Praktische hulp bij je boekhouding</p>
-      <div className="grid-3">
-        {guides.map(g=>(
-          <div key={g.slug} className="card">
-            <h2 style={{fontSize:"1.1rem",marginBottom:".75rem"}}>{g.title}</h2>
-            <p style={{color:"#64748b",fontSize:".9rem"}}>{g.desc}</p>
-          </div>
+import type { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: "ZZP Administratie Gidsen — Tips en Uitleg",
+  description: "Praktische gidsen voor ZZP'ers over boekhouden, BTW-aangifte en administratie.",
+}
+
+const guides = [
+  { slug: 'boekhouden-als-zzper', title: "Boekhouden als ZZP'er: de complete gids 2026", desc: "Alles wat je moet weten over je administratie als zelfstandige.", readTime: 12, category: 'Boekhouden' },
+  { slug: 'btw-aangifte-zzp', title: "BTW-aangifte doen als ZZP'er: stap voor stap", desc: "Hoe werkt de BTW-aangifte? Wanneer moet je het doen?", readTime: 8, category: 'BTW' },
+  { slug: 'factuur-opmaken-zzp', title: "Factuur opmaken als ZZP'er: wat moet erin?", desc: "Een correcte factuur sturen voorkomt problemen.", readTime: 6, category: 'Facturatie' },
+  { slug: 'administratie-tips-zzp', title: "10 administratietips die ZZP'ers tijd besparen", desc: "Praktische tips om je administratie efficiënt bij te houden.", readTime: 7, category: 'Tips' },
+  { slug: 'urenregistratie-zzp', title: "Urenregistratie voor ZZP'ers: waarom en hoe?", desc: "Als ZZP'er is urenregistratie niet altijd verplicht, maar wel slim.", readTime: 5, category: 'Urenregistratie' },
+  { slug: 'boekhouder-of-software', title: "Boekhouder of software: wat kies jij als ZZP'er?", desc: "Moet je een boekhouder inhuren of kun je het zelf doen?", readTime: 9, category: 'Advies' },
+]
+
+export default function GidsPage() {
+  return (
+    <div style={{ maxWidth: 900, margin: '0 auto', padding: '48px 24px' }}>
+      <div style={{ fontSize: 13, color: 'var(--text-tertiary)', marginBottom: 24 }}>
+        <a href="/" style={{ color: 'var(--text-tertiary)' }}>Home</a> / Gidsen
+      </div>
+      <h1 style={{ fontSize: 34, fontWeight: 700, marginBottom: 8 }}>ZZP Administratie Gidsen</h1>
+      <p style={{ color: 'var(--text-secondary)', marginBottom: 40, fontSize: 16 }}>Praktische gidsen over boekhouden, BTW en administratie voor zelfstandigen.</p>
+      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))', gap: 20 }}>
+        {guides.map(guide => (
+          <a key={guide.slug} href={`/gids/${guide.slug}`} className="card" style={{ padding: 24, display: 'block', cursor: 'pointer' }}>
+            <div className="badge badge-green" style={{ marginBottom: 12 }}>{guide.category}</div>
+            <h2 style={{ fontSize: 16, fontWeight: 600, marginTop: 0, marginBottom: 8, lineHeight: 1.4 }}>{guide.title}</h2>
+            <p style={{ fontSize: 13, color: 'var(--text-secondary)', margin: '0 0 12px' }}>{guide.desc}</p>
+            <div style={{ fontSize: 12, color: 'var(--text-tertiary)' }}>⏱ {guide.readTime} min leestijd</div>
+          </a>
         ))}
       </div>
     </div>
-  );
+  )
 }
