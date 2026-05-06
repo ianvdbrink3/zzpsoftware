@@ -25,7 +25,7 @@ export default function GidsPage() {
             <div className="badge badge-green" style={{ marginBottom: 12 }}>{guide.category}</div>
             <h2 style={{ fontSize: 16, fontWeight: 600, marginTop: 0, marginBottom: 8, lineHeight: 1.4 }}>{guide.title}</h2>
             <p style={{ fontSize: 13, color: 'var(--text-secondary)', margin: '0 0 12px' }}>{guide.desc}</p>
-            <div style={{ fontSize: 12, color: 'var(--text-tertiary)' }}>⏱ {guide.readTime} min leestijd</div>
+            <div style={{ fontSize: 12, color: 'var(--text-tertiary)' }}>{guide.readTime} min leestijd</div>
           </a>
         ))}
         <div className="card" style={{ padding: 24, display: 'flex', flexDirection: 'column', justifyContent: 'center', border: '2px dashed var(--border)', background: 'var(--bg-subtle)' }}>

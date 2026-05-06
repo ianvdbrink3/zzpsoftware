@@ -14,7 +14,7 @@ export default function BoekhoudenGidsPage() {
 
       <div style={{ display: 'flex', gap: 8, marginBottom: 20, flexWrap: 'wrap' }}>
         <span className="badge badge-green">Boekhouden</span>
-        <span style={{ fontSize: 13, color: 'var(--text-tertiary)' }}>📅 Bijgewerkt mei 2026 · ⏱ 12 min leestijd</span>
+        <span style={{ fontSize: 13, color: 'var(--text-tertiary)' }}>Bijgewerkt mei 2026 · 12 min leestijd</span>
       </div>
 
       <h1 style={{ fontSize: 'clamp(26px, 4vw, 38px)', fontWeight: 700, marginBottom: 16, lineHeight: 1.2 }}>

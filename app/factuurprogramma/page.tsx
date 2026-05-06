@@ -19,7 +19,7 @@ export default function FactuurprogrammaPage() {
         Een professioneel factuurprogramma stuurt automatisch herinneringen, koppelt met je bank en berekent de BTW. We vergeleken de beste opties voor ZZP'ers.
       </p>
       <div style={{ display: 'flex', gap: 8, marginBottom: 40, fontSize: 13, color: 'var(--text-tertiary)' }}>
-        <span>📅 Bijgewerkt mei 2026</span><span>·</span><span>⏱ 5 min leestijd</span><span>·</span><span>🔍 6 programma's getest</span>
+        <span>Bijgewerkt mei 2026</span><span>·</span><span>5 min leestijd</span><span>·</span><span>6 programma's getest</span>
       </div>
 
       <div className="card" style={{ padding: '20px 24px', marginBottom: 40, background: 'var(--accent-light)', border: '1px solid var(--accent)' }}>

@@ -65,7 +65,7 @@ export default async function ToolPage({ params }: { params: Promise<{ slug: str
       </div>
 
       <div style={{ display: 'flex', gap: 8, marginBottom: 40, fontSize: 13, color: 'var(--text-tertiary)', flexWrap: 'wrap' }}>
-        <span>📅 Bijgewerkt mei 2026</span><span>·</span><span>⏱ 5 min leestijd</span>
+        <span>Bijgewerkt mei 2026</span><span>·</span><span>5 min leestijd</span>
         {tool.pricing.freeTrial > 0 && <><span>·</span><span style={{ color: 'var(--accent)' }}>✓ {tool.pricing.freeTrial} dagen gratis proberen</span></>}
       </div>
 

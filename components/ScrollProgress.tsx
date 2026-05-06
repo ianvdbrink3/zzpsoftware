@@ -3,7 +3,8 @@ import { useScroll, useSpring, motion } from 'framer-motion'
 
 export function ScrollProgress() {
   const { scrollYProgress } = useScroll()
-  const scaleX = useSpring(scrollYProgress, { stiffness: 100, damping: 30, restDelta: 0.001 })
+  // Slow, deliberate spring — bar lags slightly behind scroll for a cinematic feel
+  const scaleX = useSpring(scrollYProgress, { stiffness: 28, damping: 28, restDelta: 0.001 })
   return (
     <motion.div
       style={{

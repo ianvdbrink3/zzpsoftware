@@ -18,11 +18,10 @@ export default function BoekhoudprogrammaPage() {
         We hebben de 6 populairste boekhoudprogramma's voor ZZP'ers getest op gebruiksgemak, functies, prijs en support.
       </p>
       <div style={{ display: 'flex', gap: 8, marginBottom: 32, fontSize: 13, color: 'var(--text-tertiary)', flexWrap: 'wrap' }}>
-        <span>📅 Bijgewerkt mei 2026</span><span>·</span><span>⏱ 8 min leestijd</span><span>·</span><span>🔍 6 programma's getest</span>
+        <span>Bijgewerkt mei 2026</span><span>·</span><span>8 min leestijd</span><span>·</span><span>6 programma's getest</span>
       </div>
 
       <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 32, padding: '10px 14px', background: 'var(--bg-subtle)', borderRadius: 8, fontSize: 13, color: 'var(--text-secondary)' }}>
-        <span style={{ color: 'var(--accent)' }}>ℹ</span>
         <span>We verdienen een commissie als je via onze links koopt — dit heeft <strong>geen invloed</strong> op onze rangschikking. Lees meer over <a href="#methodiek" style={{ color: 'var(--accent)' }}>onze testmethode</a>.</span>
       </div>
 
