@@ -56,20 +56,20 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               </div>
               <div>
                 <div style={{ fontWeight: 600, fontSize: 13, marginBottom: 12, color: 'var(--text-secondary)' }}>CATEGORIEËN</div>
-                {["Boekhoudprogramma's", "Factuurprogramma's", 'CRM-software', 'Urenregistratie'].map(l => (
-                  <div key={l} style={{ fontSize: 14, marginBottom: 6 }}><a style={{ color: 'var(--text-secondary)' }}>{l}</a></div>
+                {[["Boekhoudprogramma's", '/boekhoudprogramma'], ["Factuurprogramma's", '/factuurprogramma']].map(([l, href]) => (
+                  <div key={l} style={{ fontSize: 14, marginBottom: 6 }}><a href={href} style={{ color: 'var(--text-secondary)' }}>{l}</a></div>
                 ))}
               </div>
               <div>
                 <div style={{ fontWeight: 600, fontSize: 13, marginBottom: 12, color: 'var(--text-secondary)' }}>VERGELIJKINGEN</div>
-                {['Moneybird vs Snelstart', 'Moneybird vs Jortt', 'Exact vs Twinfield'].map(l => (
-                  <div key={l} style={{ fontSize: 14, marginBottom: 6 }}><a style={{ color: 'var(--text-secondary)' }}>{l}</a></div>
+                {[['Moneybird vs Snelstart', '/vergelijk/moneybird-vs-snelstart'], ['Moneybird vs Jortt', '/vergelijk/moneybird-vs-jortt'], ['Exact vs Twinfield', '/vergelijk/exact-online-vs-twinfield']].map(([l, href]) => (
+                  <div key={l} style={{ fontSize: 14, marginBottom: 6 }}><a href={href} style={{ color: 'var(--text-secondary)' }}>{l}</a></div>
                 ))}
               </div>
               <div>
                 <div style={{ fontWeight: 600, fontSize: 13, marginBottom: 12, color: 'var(--text-secondary)' }}>GIDSEN</div>
-                {["Boekhouden als ZZP'er", 'BTW-aangifte', 'Factuur opmaken'].map(l => (
-                  <div key={l} style={{ fontSize: 14, marginBottom: 6 }}><a style={{ color: 'var(--text-secondary)' }}>{l}</a></div>
+                {[["Boekhouden als ZZP'er", '/gids/boekhouden-als-zzper'], ['BTW-aangifte', '/gids/btw-aangifte-zzp'], ['Factuur opmaken', '/gids/factuur-opmaken-zzp']].map(([l, href]) => (
+                  <div key={l} style={{ fontSize: 14, marginBottom: 6 }}><a href={href} style={{ color: 'var(--text-secondary)' }}>{l}</a></div>
                 ))}
               </div>
             </div>

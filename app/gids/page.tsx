@@ -9,9 +9,6 @@ const guides = [
   { slug: 'boekhouden-als-zzper', title: "Boekhouden als ZZP'er: de complete gids 2026", desc: "Alles wat je moet weten over je administratie als zelfstandige.", readTime: 12, category: 'Boekhouden' },
   { slug: 'btw-aangifte-zzp', title: "BTW-aangifte doen als ZZP'er: stap voor stap", desc: "Hoe werkt de BTW-aangifte? Wanneer moet je het doen?", readTime: 8, category: 'BTW' },
   { slug: 'factuur-opmaken-zzp', title: "Factuur opmaken als ZZP'er: wat moet erin?", desc: "Een correcte factuur sturen voorkomt problemen.", readTime: 6, category: 'Facturatie' },
-  { slug: 'administratie-tips-zzp', title: "10 administratietips die ZZP'ers tijd besparen", desc: "Praktische tips om je administratie efficiënt bij te houden.", readTime: 7, category: 'Tips' },
-  { slug: 'urenregistratie-zzp', title: "Urenregistratie voor ZZP'ers: waarom en hoe?", desc: "Als ZZP'er is urenregistratie niet altijd verplicht, maar wel slim.", readTime: 5, category: 'Urenregistratie' },
-  { slug: 'boekhouder-of-software', title: "Boekhouder of software: wat kies jij als ZZP'er?", desc: "Moet je een boekhouder inhuren of kun je het zelf doen?", readTime: 9, category: 'Advies' },
 ]
 
 export default function GidsPage() {
@@ -31,6 +28,11 @@ export default function GidsPage() {
             <div style={{ fontSize: 12, color: 'var(--text-tertiary)' }}>⏱ {guide.readTime} min leestijd</div>
           </a>
         ))}
+        <div className="card" style={{ padding: 24, display: 'flex', flexDirection: 'column', justifyContent: 'center', border: '2px dashed var(--border)', background: 'var(--bg-subtle)' }}>
+          <div style={{ fontWeight: 600, marginBottom: 8 }}>Meer gidsen komen eraan</div>
+          <p style={{ fontSize: 13, color: 'var(--text-secondary)', margin: '0 0 14px' }}>We werken aan nieuwe gidsen over urenregistratie, boekhouder vs software en meer.</p>
+          <a href="/api/subscribe" className="btn-secondary" style={{ fontSize: 13, justifyContent: 'center' }}>Ontvang updates →</a>
+        </div>
       </div>
     </div>
   )
