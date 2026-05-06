@@ -1,8 +1,8 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: "Factuur opmaken als ZZP'er 2026: wat moet erin?",
-  description: "Wat moet er verplicht op een factuur als ZZP'er? Wettelijke eisen, een voorbeeldfactuur en tips voor sneller betaald worden.",
+  title: "Factuur opmaken ZZP: wettelijke eisen 2026",
+  description: "Wat moet er verplicht op een factuur als ZZP'er? Wettelijke eisen, voorbeeld en 5 tips om sneller betaald te worden.",
 }
 
 export default function FactuurOpmakenGidsPage() {
@@ -18,7 +18,7 @@ export default function FactuurOpmakenGidsPage() {
       </div>
 
       <h1 style={{ fontSize: 'clamp(26px, 4vw, 38px)', fontWeight: 700, marginBottom: 16, lineHeight: 1.2 }}>
-        Factuur opmaken als ZZP'er: wat moet erin? (2026)
+        Factuur opmaken als ZZP&apos;er: wat moet erin? (2026)
       </h1>
       <p style={{ fontSize: 17, color: 'var(--text-secondary)', marginBottom: 40, lineHeight: 1.7 }}>
         Een correcte factuur sturen is cruciaal: het is de basis van je inkomsten én je BTW-administratie. Mis je één verplicht onderdeel? Dan kan je klant de factuur weigeren of mag de Belastingdienst de BTW niet erkennen.
@@ -51,39 +51,29 @@ export default function FactuurOpmakenGidsPage() {
       <div className="prose">
         <h2>De verplichte factuurvereisten uitgelegd</h2>
 
-        <h3>1. Naam en adres</h3>
+        <h3>1. Naam, adres en KVK-nummer</h3>
         <p>
-          Zet je volledige bedrijfsnaam (of je eigen naam als je als eenmanszaak werkt) en je zakelijk adres op de factuur. Als je thuiswerkt mag dat je privéadres zijn. Zet ook het adres van je klant erop — dit is verplicht en voorkomt discussies.
+          Zet je volledige bedrijfsnaam en zakelijk adres op de factuur. KVK-nummer en BTW-nummer zijn allebei verplicht. Het BTW-nummer (NL123456789B01) ontvang je van de Belastingdienst na inschrijving bij de KVK.
         </p>
 
-        <h3>2. KVK-nummer en BTW-nummer</h3>
+        <h3>2. Uniek factuurnummer</h3>
         <p>
-          Beide zijn verplicht vermeld te staan. Het KVK-nummer staat in je inschrijving bij de Kamer van Koophandel. Je BTW-nummer (ook wel OB-nummer of omzetbelastingnummer) krijg je van de Belastingdienst na aanmelding als ondernemer. Het ziet eruit als: NL123456789B01.
+          Elk factuurnummer moet uniek en opeenvolgend zijn — je mag geen nummers overslaan. Veel ZZP&apos;ers beginnen met 2026001, 2026002 enzovoort. <a href="/tools/moneybird" style={{ color: 'var(--accent)' }}>Moneybird</a> en <a href="/tools/jortt" style={{ color: 'var(--accent)' }}>Jortt</a> nummeren facturen automatisch. Is er een fout? Maak een creditnota — nooit een factuur aanpassen of verwijderen.
         </p>
 
-        <h3>3. Uniek factuurnummer</h3>
+        <h3>3. Duidelijke omschrijving</h3>
         <p>
-          Elk factuurnummer moet uniek zijn en opeenvolgend genummerd — je mag geen nummers overslaan. Veel ZZP'ers beginnen met 2026001, 2026002 enzovoorts. Boekhoudprogramma's doen dit automatisch. <strong>Let op:</strong> je mag een factuurnummer niet achteraf wijzigen of verwijderen. Is er een fout? Maak een creditnota aan.
+          Omschrijf specifiek wat je hebt geleverd. "Websiteontwerp voor klant X, zoals beschreven in offerte #2026-003, inclusief 3 revisierondes" is beter dan "consultancywerkzaamheden april 2026". Hoe specifieker, hoe minder discussie achteraf.
         </p>
 
-        <h3>4. Datum</h3>
+        <h3>4. BTW-bedragen</h3>
         <p>
-          De factuurdatum is de datum waarop je de factuur verstuurt, niet de datum waarop de werkzaamheden zijn uitgevoerd. In principe moet je factureren binnen een maand na de prestatie, maar in de praktijk wijkt hier niemand van af.
+          Vermeld het bedrag exclusief BTW, het percentage (21%, 9% of 0%), het BTW-bedrag en het totaal inclusief BTW. Bij meerdere posten met verschillende tarieven: een aparte regel per tarief.
         </p>
 
-        <h3>5. Omschrijving van de dienst of het product</h3>
+        <h3>5. Betalingstermijn en IBAN</h3>
         <p>
-          Omschrijf duidelijk wat je hebt geleverd. "Consultancywerkzaamheden april 2026" is te vaag. Beter: "Websiteontwerp voor klant X, zoals beschreven in offerte #2026-003, inclusief 3 revisierondes." Hoe specifieker, hoe minder discussie achteraf.
-        </p>
-
-        <h3>6. BTW-bedragen</h3>
-        <p>
-          Vermeld het bedrag exclusief BTW, het BTW-percentage (21%, 9% of 0%), het BTW-bedrag en het totaalbedrag inclusief BTW. Bij meerdere posten met verschillende tarieven: een aparte regel per tarief.
-        </p>
-
-        <h3>7. Betalingstermijn en IBAN</h3>
-        <p>
-          Standaard in Nederland is 30 dagen betalingstermijn, maar je mag dit zelf kiezen. Vermeld ook je IBAN zodat je klant direct kan betalen. Tip: voeg een QR-code toe — moderne factuurprogramma's doen dit automatisch en je wordt sneller betaald.
+          Standaard in Nederland is 30 dagen, maar je mag dit zelf kiezen. Voeg een QR-code toe — <a href="/tools/snelstart" style={{ color: 'var(--accent)' }}>SnelStart</a> en <a href="/tools/e-boekhouden" style={{ color: 'var(--accent)' }}>e-Boekhouden</a> genereren dit automatisch en je wordt sneller betaald.
         </p>
 
         <h2>Voorbeeld: zo ziet een correcte factuur eruit</h2>
@@ -142,59 +132,40 @@ export default function FactuurOpmakenGidsPage() {
       <div className="prose">
         <h2>Speciale situaties</h2>
 
-        <h3>Facturen voor particulieren (B2C)</h3>
-        <p>
-          Lever je aan particulieren? Dan hoef je niet per se een factuur te sturen — een kassabon of bonnetje volstaat. Toch is een factuur verstandig: het voorkomt discussies en is netjes. Wil je een vereenvoudigde factuur sturen? Dan mag je het BTW-nummer weglaten als het bedrag onder de €100 (incl. BTW) blijft.
-        </p>
-
         <h3>Facturen voor buitenlandse klanten (EU)</h3>
         <p>
-          Lever je B2B aan een bedrijf in de EU? Dan mag je 0% BTW hanteren (intracommunautaire levering) als je klant een geldig BTW-nummer heeft. Vermeld dit BTW-nummer op je factuur en voeg toe: "BTW verlegd" of "VAT reverse charged". Controleer het BTW-nummer altijd via het VIES-systeem van de Europese Commissie.
+          Lever je B2B aan een bedrijf in de EU? Dan mag je 0% BTW hanteren als je klant een geldig BTW-nummer heeft. Vermeld dit op je factuur: "BTW verlegd" of "VAT reverse charged". Controleer het BTW-nummer via het VIES-systeem.
         </p>
 
         <h3>Creditnota</h3>
         <p>
-          Is er een fout op een factuur? Je mag facturen nooit verwijderen of aanpassen — dat is verplicht om je administratie sluitend te houden. Maak in plaats daarvan een creditnota aan: een negatieve factuur die de originele annuleert. Stuur daarna een nieuwe correcte factuur.
+          Fout op een factuur? Maak een creditnota aan — nooit een factuur aanpassen of verwijderen. Stuur daarna een nieuwe correcte factuur.
         </p>
 
-        <h2>Tips voor sneller betaald worden</h2>
+        <h2>5 tips om sneller betaald te worden</h2>
         <ul>
-          <li><strong>Stuur direct:</strong> stuur de factuur dezelfde dag als je de werkzaamheden afrond, niet aan het eind van de maand.</li>
-          <li><strong>Kortere betalingstermijn:</strong> gebruik 14 dagen in plaats van 30 als je klant het accepteert.</li>
-          <li><strong>QR-code met betaallink:</strong> klanten betalen direct via hun telefoon — veel factuurprogramma's genereren dit automatisch.</li>
-          <li><strong>Automatische herinneringen:</strong> stel een herinnering in na 7 en 14 dagen. De meeste boekhoudapps doen dit automatisch.</li>
-          <li><strong>Vooruitbetaling of aanbetaling:</strong> bij grotere projecten is het normaal om 30-50% vooraf te vragen.</li>
+          <li><strong>Stuur direct:</strong> factureer dezelfde dag dat je de werkzaamheden afrond</li>
+          <li><strong>Kortere termijn:</strong> gebruik 14 dagen in plaats van 30 als de klant het accepteert</li>
+          <li><strong>QR-code:</strong> klanten betalen direct via hun telefoon</li>
+          <li><strong>Automatische herinneringen:</strong> stel een herinnering in na 7 en 14 dagen</li>
+          <li><strong>Aanbetaling:</strong> vraag bij grotere projecten 30–50% vooraf</li>
         </ul>
 
-        <h2>Het beste factuurprogramma voor ZZP'ers</h2>
+        <h2>Het beste factuurprogramma voor ZZP&apos;ers</h2>
         <p>
-          Een goed factuurprogramma stuurt automatisch herinneringen, koppelt met je bank, berekent de BTW en houdt je factuurnummering bij. De drie beste opties:
+          Een goed factuurprogramma nummert automatisch, koppelt met je bank en stuurt herinneringen. Populaire keuzes:
         </p>
+        <ul>
+          <li><a href="/tools/moneybird" style={{ color: 'var(--accent)' }}>Moneybird</a> — mooiste ontwerp, QR-code, gratis instapversie</li>
+          <li><a href="/tools/jortt" style={{ color: 'var(--accent)' }}>Jortt</a> — simpelste interface, snel een factuur sturen</li>
+          <li><a href="/tools/snelstart" style={{ color: 'var(--accent)' }}>SnelStart</a> — uitgebreid met offertes en inkoopfacturen</li>
+        </ul>
       </div>
 
-      <div style={{ display: 'flex', flexDirection: 'column', gap: 14, marginTop: 8, marginBottom: 40 }}>
-        {[
-          { name: 'Moneybird', slug: 'moneybird', desc: 'Mooiste factuurontwerp, automatische herinneringen, QR-code', price: 'Gratis / €14/mnd' },
-          { name: 'Jortt', slug: 'jortt', desc: 'Simpelste interface, snel een factuur maken', price: 'Vanaf €7/mnd' },
-          { name: 'Snelstart', slug: 'snelstart', desc: 'Uitgebreide opties inclusief offertes en inkoopfacturen', price: 'Vanaf €9/mnd' },
-        ].map(tool => (
-          <div key={tool.slug} className="card" style={{ padding: '16px 20px', display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: 12, flexWrap: 'wrap' }}>
-            <div>
-              <span style={{ fontWeight: 600 }}>{tool.name}</span>
-              <span style={{ fontSize: 13, color: 'var(--text-secondary)', marginLeft: 10 }}>{tool.desc}</span>
-            </div>
-            <div style={{ display: 'flex', gap: 8, alignItems: 'center' }}>
-              <span style={{ fontSize: 13, color: 'var(--text-tertiary)' }}>{tool.price}</span>
-              <a href={`/tools/${tool.slug}`} className="btn-secondary" style={{ fontSize: 13, padding: '6px 14px' }}>Lees meer</a>
-            </div>
-          </div>
-        ))}
-      </div>
-
-      <div style={{ background: 'var(--accent-light)', border: '1px solid var(--accent)', borderRadius: 16, padding: '28px 32px', textAlign: 'center', marginTop: 16 }}>
-        <h3 style={{ fontSize: 20, fontWeight: 700, marginTop: 0, marginBottom: 8, color: 'var(--accent-text)' }}>Vergelijk alle factuurprogramma's</h3>
-        <p style={{ color: 'var(--accent-text)', margin: '0 0 20px', opacity: 0.85 }}>Bekijk onze vergelijking van de beste factuurprogramma's voor ZZP'ers.</p>
-        <a href="/factuurprogramma" className="btn-primary" style={{ fontSize: 15, padding: '12px 28px' }}>Bekijk factuurprogramma's →</a>
+      <div style={{ background: 'var(--accent-light)', border: '1px solid var(--accent)', borderRadius: 16, padding: '28px 32px', textAlign: 'center', marginTop: 32 }}>
+        <h3 style={{ fontSize: 20, fontWeight: 700, marginTop: 0, marginBottom: 8, color: 'var(--accent-text)' }}>Vergelijk alle factuurprogramma&apos;s</h3>
+        <p style={{ color: 'var(--accent-text)', margin: '0 0 20px', opacity: 0.85 }}>Bekijk onze vergelijking van de beste boekhoudprogramma&apos;s voor ZZP&apos;ers op prijs, functies en gebruiksgemak.</p>
+        <a href="/boekhoudprogramma" className="btn-primary" style={{ fontSize: 15, padding: '12px 28px' }}>Vergelijk boekhoudprogramma&apos;s →</a>
       </div>
     </div>
   )

@@ -1,8 +1,8 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: "KOR (Kleine Ondernemersregeling) voor ZZP'ers — Hoe Werkt Het? (2026)",
-  description: "Alles over de KOR in 2026: hoe de BTW-vrijstelling werkt, de omzetgrens van €20.000, voor- en nadelen en hoe je je aanmeldt bij de Belastingdienst.",
+  title: "KOR 2026: BTW-vrijstelling voor ZZP'ers uitgelegd",
+  description: "De KOR stelt ZZP'ers met omzet onder €20.000 vrij van BTW-plicht. Voordelen, nadelen, aanmelden en voor wie het écht loont.",
 }
 
 export default function KorKleineOndernemersregelingPage() {
@@ -18,20 +18,20 @@ export default function KorKleineOndernemersregelingPage() {
       </div>
 
       <h1 style={{ fontSize: 'clamp(26px, 4vw, 38px)', fontWeight: 700, marginBottom: 16, lineHeight: 1.2 }}>
-        KOR: de kleine ondernemersregeling uitgelegd voor ZZP&apos;ers
+        KOR: de Kleine Ondernemersregeling uitgelegd voor ZZP&apos;ers
       </h1>
       <p style={{ fontSize: 17, color: 'var(--text-secondary)', marginBottom: 40, lineHeight: 1.7 }}>
-        De Kleine Ondernemersregeling (KOR) stelt ZZP&apos;ers met een beperkte omzet vrij van BTW-verplichtingen. Dat klinkt aantrekkelijk — en voor de juiste ondernemer is het dat ook. Maar de KOR heeft ook nadelen. In deze gids lees je precies hoe de regeling werkt, voor wie het geschikt is en hoe je je aanmeldt.
+        De Kleine Ondernemersregeling (KOR) stelt ZZP&apos;ers met een beperkte omzet vrij van BTW-verplichtingen. Dat klinkt aantrekkelijk — maar de KOR heeft ook nadelen. In deze gids lees je precies hoe de regeling werkt en voor wie het geschikt is.
       </p>
 
       <div className="card" style={{ padding: '20px 24px', marginBottom: 40, background: 'var(--accent-light)', border: '1px solid var(--accent)' }}>
         <div style={{ fontWeight: 600, marginBottom: 10, color: 'var(--accent-text)' }}>In het kort</div>
         <ul style={{ margin: 0, paddingLeft: 20 }}>
           {[
-            'De KOR geldt voor ondernemers met een jaaromzet onder €20.000 (excl. BTW)',
+            'KOR geldt voor ondernemers met jaaromzet onder €20.000 (excl. BTW)',
             'Bij de KOR hoef je geen BTW te berekenen, in rekening te brengen of aan te geven',
             'Nadeel: je kunt de BTW op zakelijke kosten ook niet terugvragen',
-            'Aanmelden kan via Mijn Belastingdienst Zakelijk, minimaal 4 weken voor aanvang van het kwartaal',
+            'Aanmelden via Mijn Belastingdienst Zakelijk, minimaal 4 weken voor aanvang kwartaal',
           ].map(item => (
             <li key={item} style={{ marginBottom: 6, fontSize: 14, color: 'var(--accent-text)' }}>{item}</li>
           ))}
@@ -41,18 +41,15 @@ export default function KorKleineOndernemersregelingPage() {
       <div className="prose">
         <h2>Wat is de KOR precies?</h2>
         <p>
-          De Kleine Ondernemersregeling is een BTW-vrijstelling voor Nederlandse ondernemers met een beperkte omzet. Kies je voor de KOR, dan ben je vrijgesteld van het berekenen en afdragen van BTW. Je hoeft ook geen BTW-aangifte meer in te dienen. In ruil daarvoor mag je de BTW op je eigen inkopen en kosten <strong>niet terugvragen</strong>.
+          De Kleine Ondernemersregeling is een BTW-vrijstelling voor Nederlandse ondernemers met een beperkte omzet. Kies je voor de KOR, dan ben je vrijgesteld van het berekenen en afdragen van BTW én hoef je geen BTW-aangifte te doen. In ruil daarvoor mag je de BTW op je eigen inkopen <strong>niet terugvragen</strong>.
         </p>
         <p>
-          De KOR is een keuzeregeling: je bent niet verplicht gebruik te maken van de regeling als je aan de omzetgrens voldoet. Je kunt ook gewoon de normale BTW-regels blijven volgen.
+          De KOR is een keuzeregeling: je bent niet verplicht gebruik te maken van de regeling als je aan de omzetgrens voldoet.
         </p>
 
-        <h2>De omzetgrens van €20.000</h2>
+        <h2>Omzetgrens van €20.000</h2>
         <p>
-          De KOR is beschikbaar als je jaaromzet in Nederland onder de <strong>€20.000 exclusief BTW</strong> blijft. Het gaat hierbij om je totale omzet uit BTW-belaste leveringen en diensten. Als je gedurende het jaar de grens van €20.000 overschrijdt, vervalt je vrijstelling per direct en moet je je opnieuw aanmelden voor de normale BTW-regels.
-        </p>
-        <p>
-          Let op: de grens van €20.000 geldt per kalenderjaar. Als je halverwege het jaar begint, telt de omzetgrens voor de resterende maanden naar rato.
+          De KOR is beschikbaar als je jaaromzet onder de <strong>€20.000 exclusief BTW</strong> blijft. Overschrijd je de grens gedurende het jaar, dan vervalt je vrijstelling per direct. Let op: bij een gedeeld jaar geldt de grens naar rato.
         </p>
 
         <h2>Voor wie is de KOR geschikt?</h2>
@@ -61,46 +58,45 @@ export default function KorKleineOndernemersregelingPage() {
         </p>
         <ul>
           <li>Je een lage omzet hebt en verwacht onder de €20.000 te blijven</li>
-          <li>Je klanten particulieren zijn die geen BTW kunnen terugvragen (en dus voordeel hebben van lagere prijzen zonder BTW)</li>
-          <li>Je weinig zakelijke kosten maakt waarop BTW zit die je anders zou terugvragen</li>
+          <li>Je klanten particulieren zijn (die BTW niet kunnen terugvragen)</li>
+          <li>Je weinig zakelijke kosten maakt waarop BTW zit</li>
           <li>Je de administratieve last van kwartaalaangiftes wilt vermijden</li>
         </ul>
         <p>
-          De KOR is minder geschikt als:
+          De KOR is <strong>minder</strong> geschikt als:
         </p>
         <ul>
-          <li>Je voornamelijk werkt voor zakelijke opdrachtgevers die BTW wel kunnen verrekenen</li>
-          <li>Je hoge zakelijke kosten hebt met veel BTW (denk aan apparatuur, software, diensten)</li>
+          <li>Je voornamelijk werkt voor zakelijke opdrachtgevers die BTW verrekenen</li>
+          <li>Je hoge zakelijke kosten hebt met veel BTW (apparatuur, software)</li>
           <li>Je omzet de grens van €20.000 dreigt te overschrijden</li>
-          <li>Je internationale activiteiten hebt — de KOR geldt namelijk alleen voor binnenlandse omzet</li>
+          <li>Je internationale activiteiten hebt</li>
         </ul>
 
         <h2>Voordelen van de KOR</h2>
         <ul>
-          <li><strong>Geen BTW-administratie:</strong> Je hoeft geen BTW te berekenen op facturen en geen kwartaalaangiftes te doen. Dit scheelt aanzienlijk in administratieve tijd.</li>
-          <li><strong>Lagere prijzen voor particulieren:</strong> Als je klanten particulieren zijn, kun je scherper prijzen — of een hogere marge pakken bij dezelfde prijs.</li>
-          <li><strong>Eenvoudiger factureren:</strong> Je facturen zijn eenvoudiger omdat je geen BTW-bedragen hoeft te vermelden (wel de vermelding &apos;BTW vrijgesteld o.g.v. de KOR&apos;).</li>
+          <li><strong>Geen BTW-administratie:</strong> geen kwartaalaangiftes, geen BTW op facturen. Scheelt aanzienlijk in tijd.</li>
+          <li><strong>Lagere prijzen voor particulieren:</strong> je kunt scherper prijzen of een hogere marge pakken.</li>
+          <li><strong>Eenvoudiger factureren:</strong> facturen zonder BTW-bedragen — wel met de tekst &apos;BTW vrijgesteld o.g.v. de KOR&apos;.</li>
         </ul>
 
         <h2>Nadelen van de KOR</h2>
         <ul>
-          <li><strong>Geen BTW-aftrek op kosten:</strong> De BTW die je betaalt op zakelijke inkopen — laptop, software, abonnementen — mag je niet terugvragen. Dit verhoogt effectief je kosten.</li>
-          <li><strong>Zakelijke klanten:</strong> Zakelijke opdrachtgevers kunnen geen BTW verrekenen op jouw facturen (want die staat er niet op). Dit kan een concurrentieel nadeel zijn als ze vergelijken met andere aanbieders.</li>
-          <li><strong>Omzetrisico:</strong> Overschrijd je onverwacht de grens van €20.000, dan moet je direct over op de normale BTW-regels en alsnog aangifte doen.</li>
-          <li><strong>Gebonden periode:</strong> Als je je aanmeldt voor de KOR, ben je er minimaal 3 jaar aan gebonden, tenzij je de omzetgrens overschrijdt.</li>
+          <li><strong>Geen BTW-aftrek:</strong> de BTW op software-abonnementen, laptop en andere kosten mag je niet terugvragen. Dat verhoogt effectief je kosten.</li>
+          <li><strong>Concurrentieel nadeel bij zakelijke klanten:</strong> zij kunnen geen BTW op jouw facturen verrekenen.</li>
+          <li><strong>Gebonden periode:</strong> je bent minimaal 3 jaar aan de KOR gebonden na aanmelding.</li>
         </ul>
+        <p>
+          Val je onder de KOR maar wil je toch een <a href="/boekhoudprogramma" style={{ color: 'var(--accent)' }}>boekhoudprogramma</a> gebruiken? <a href="/tools/moneybird" style={{ color: 'var(--accent)' }}>Moneybird</a> en <a href="/tools/jortt" style={{ color: 'var(--accent)' }}>Jortt</a> ondersteunen de KOR volledig en passen je factuursjablonen automatisch aan.
+        </p>
 
         <h2>Hoe meld je je aan voor de KOR?</h2>
         <p>
-          Aanmelden voor de KOR doe je via <strong>Mijn Belastingdienst Zakelijk</strong>. Je moet je aanmelding indienen minimaal <strong>4 weken voor het begin van het kwartaal</strong> waarin je de KOR wilt laten ingaan. Wil je de KOR toepassen vanaf 1 januari, meld je dan uiterlijk 1 december van het voorgaande jaar aan.
-        </p>
-        <p>
-          Na aanmelding ontvang je een bevestiging van de Belastingdienst. Vanaf de ingangsdatum hoef je geen BTW meer te berekenen of aan te geven. Zorg dat je je bestaande factuursjabloon aanpast en de tekst &apos;Vrijgesteld van BTW op grond van artikel 25 Wet OB (KOR)&apos; toevoegt.
+          Aanmelden doe je via <strong>Mijn Belastingdienst Zakelijk</strong>, minimaal <strong>4 weken voor het begin van het kwartaal</strong> waarop je de KOR wilt laten ingaan. Wil je de KOR toepassen vanaf 1 januari, meld je dan uiterlijk 1 december van het voorgaande jaar aan.
         </p>
 
         <h2>KOR en de grens overschrijden: wat dan?</h2>
         <p>
-          Zodra je merkt dat je de omzetgrens van €20.000 gaat overschrijden, moet je dit melden bij de Belastingdienst. Vanaf de datum van overschrijding gelden de normale BTW-regels. Je moet dan voor de resterende maanden van het jaar BTW in rekening brengen en aangifte doen. Het is verstandig je omzet gedurende het jaar goed bij te houden om niet voor verrassingen te komen staan.
+          Merk je dat je de €20.000 gaat overschrijden, meld dit dan bij de Belastingdienst. Vanaf de datum van overschrijding gelden de normale BTW-regels. Houd je omzet gedurende het jaar bij in je boekhoudprogramma — <a href="/tools/snelstart" style={{ color: 'var(--accent)' }}>SnelStart</a> en <a href="/tools/e-boekhouden" style={{ color: 'var(--accent)' }}>e-Boekhouden</a> tonen je omzet real-time per kwartaal.
         </p>
       </div>
 

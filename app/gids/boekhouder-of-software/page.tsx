@@ -1,8 +1,8 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: "Boekhouder Inhuren of Zelf Boekhouden als ZZP'er (2026)",
-  description: "Vergelijking: boekhouder inhuren of zelf boekhouden als ZZP'er. Kosten, voor- en nadelen, en voor wie welke keuze het beste werkt.",
+  title: "Boekhouder of software ZZP: vergelijking 2026",
+  description: "Boekhouder inhuren (€80–€200/mnd) of zelf boekhouden met software (€15–€40/mnd)? Vergelijking van kosten, voor- en nadelen voor ZZP'ers.",
 }
 
 export default function BoekhouderOfSoftwarePage() {
@@ -21,17 +21,17 @@ export default function BoekhouderOfSoftwarePage() {
         Boekhouder inhuren of zelf boekhouden: wat past bij jou?
       </h1>
       <p style={{ fontSize: 17, color: 'var(--text-secondary)', marginBottom: 40, lineHeight: 1.7 }}>
-        Een van de eerste praktische vragen als ZZP&apos;er: doe ik mijn boekhouding zelf, of besteed ik het uit aan een boekhouder? Beide opties hebben duidelijke voor- en nadelen. Het antwoord hangt af van je omzet, complexiteit van je administratie, persoonlijke voorkeur en hoeveel tijd je wilt investeren.
+        Een van de eerste praktische vragen als ZZP&apos;er: doe ik mijn boekhouding zelf, of besteed ik het uit? Het antwoord hangt af van je omzet, complexiteit, persoonlijke voorkeur en hoeveel tijd je wilt investeren.
       </p>
 
       <div className="card" style={{ padding: '20px 24px', marginBottom: 40, background: 'var(--accent-light)', border: '1px solid var(--accent)' }}>
         <div style={{ fontWeight: 600, marginBottom: 10, color: 'var(--accent-text)' }}>In het kort</div>
         <ul style={{ margin: 0, paddingLeft: 20 }}>
           {[
-            'Zelf boekhouden met software kost gemiddeld €15–€40 per maand, een boekhouder €80–€200 per maand',
+            'Software kost gemiddeld €15–€40/mnd, een boekhouder €80–€200/mnd',
             'Voor eenvoudige ZZP-situaties is goede software volledig voldoende',
-            'Een boekhouder loont vooral bij hogere omzet, complexe situaties of weinig eigen tijd',
-            'Een hybride aanpak — zelf boekhouden, boekhouder voor de aangifte — is populair en kostenefficiënt',
+            'Een boekhouder loont bij hogere omzet, complexe situaties of weinig eigen tijd',
+            'Hybride aanpak — zelf boekhouden, boekhouder voor de aangifte — is populair',
           ].map(item => (
             <li key={item} style={{ marginBottom: 6, fontSize: 14, color: 'var(--accent-text)' }}>{item}</li>
           ))}
@@ -41,34 +41,39 @@ export default function BoekhouderOfSoftwarePage() {
       <div className="prose">
         <h2>Wat kost een boekhouder voor een ZZP&apos;er?</h2>
         <p>
-          Een boekhouder of administratiekantoor voor ZZP&apos;ers rekent doorgaans een maandelijks abonnement of uurtarief. Voor een eenmanszaak met relatief eenvoudige administratie liggen de kosten in 2026 tussen de <strong>€80 en €150 per maand</strong> voor volledig ontzorgen — inclusief BTW-aangiftes, jaarrekening en inkomstenbelastingaangifte. Bij complexere situaties of extra dienstverlening kan dit oplopen tot €200 per maand of meer.
+          Een boekhouder voor eenmanszaken kost in 2026 doorgaans <strong>€80 tot €150 per maand</strong> voor volledig ontzorgen — inclusief BTW-aangiftes, jaarrekening en inkomstenbelastingaangifte. Complexere situaties of extra diensten kunnen oplopen tot €200/mnd.
         </p>
         <p>
-          Sommige boekhouders werken op uurbasis, met tarieven tussen €60 en €120 per uur exclusief BTW. Als je kiest voor een boekhouder die alleen de jaarlijkse aangifte inkomstenbelasting verzorgt, betaal je eenmalig tussen de €300 en €600 per jaar.
-        </p>
-
-        <h2>Wat kost boekhoudprogramma zelf gebruiken?</h2>
-        <p>
-          De meeste boekhoudprogramma&apos;s voor ZZP&apos;ers rekenen een maandelijks abonnement van <strong>€15 tot €40 per maand</strong>, afhankelijk van het pakket en de functies. Populaire opties zoals Moneybird, Jortt, Boekhouden.nl en SnelStart vallen in deze prijsklasse. Hiervoor krijg je functies als facturatie, BTW-aangifte, bankgekoppelde transacties en basisrapportages.
-        </p>
-        <p>
-          Jaarlijks kost dit €180 tot €480 — een stuk minder dan een boekhouder. Daar staat tegenover dat je zelf tijd moet investeren in het bijhouden van je administratie.
+          Alleen de jaarlijkse aangifte laten doen door een boekhouder? Dan betaal je eenmalig €300 tot €600 per jaar.
         </p>
 
-        <h2>Wanneer is zelf boekhouden met software de juiste keuze?</h2>
+        <h2>Wat kost zelf boekhouden met software?</h2>
         <p>
-          Zelf boekhouden werkt goed als:
+          De meeste boekhoudprogramma&apos;s voor ZZP&apos;ers kosten <strong>€15 tot €40 per maand</strong>. Populaire opties:
+        </p>
+        <ul>
+          <li><a href="/tools/moneybird" style={{ color: 'var(--accent)' }}>Moneybird</a> — gratis instapversie, betaald v.a. €14/mnd</li>
+          <li><a href="/tools/jortt" style={{ color: 'var(--accent)' }}>Jortt</a> — eenvoudig, v.a. €7/mnd</li>
+          <li><a href="/tools/e-boekhouden" style={{ color: 'var(--accent)' }}>e-Boekhouden</a> — uitgebreid, v.a. €9/mnd</li>
+          <li><a href="/tools/snelstart" style={{ color: 'var(--accent)' }}>SnelStart</a> — bankkoppeling en BTW-aangifte, v.a. €9/mnd</li>
+        </ul>
+        <p>
+          Jaarlijks: €180 tot €480 — een stuk minder dan een boekhouder. Bekijk alle opties op <a href="/boekhoudprogramma" style={{ color: 'var(--accent)' }}>onze vergelijkingspagina</a>.
+        </p>
+
+        <h2>Wanneer is zelf boekhouden de juiste keuze?</h2>
+        <p>
+          Zelf boekhouden met software werkt goed als:
         </p>
         <ul>
           <li>Je een eenmanszaak hebt met overzichtelijke inkomsten en uitgaven</li>
           <li>Je een beperkt aantal facturen per maand verstuurt</li>
           <li>Je geen personeel in dienst hebt</li>
-          <li>Je niet werkt met buitenlandse opdrachtgevers of complexe BTW-situaties</li>
+          <li>Je geen complexe BTW-situaties hebt met buitenlandse opdrachtgevers</li>
           <li>Je bereid bent een paar uur per maand aan administratie te besteden</li>
-          <li>Je financieel enigszins onderlegd bent of bereid bent dit te leren</li>
         </ul>
         <p>
-          Moderne boekhoudprogramma&apos;s zijn zo gebruiksvriendelijk dat de meeste ZZP&apos;ers zonder boekhoudkundige achtergrond er prima mee uit de voeten kunnen. Koppelingen met je bankrekening zorgen ervoor dat transacties automatisch worden ingeladen.
+          Moderne boekhoudprogramma&apos;s zijn zo gebruiksvriendelijk dat je geen boekhoudkundige achtergrond nodig hebt.
         </p>
 
         <h2>Wanneer is een boekhouder de betere keuze?</h2>
@@ -76,39 +81,31 @@ export default function BoekhouderOfSoftwarePage() {
           Een boekhouder inhuren loont als:
         </p>
         <ul>
-          <li>Je een hoge omzet hebt (boven circa €80.000 per jaar) en belastingoptimalisatie belangrijk is</li>
+          <li>Je omzet boven circa €80.000 per jaar uitkomt</li>
           <li>Je overweegt over te stappen naar een BV</li>
           <li>Je werkt met buitenlandse klanten en intracommunautaire leveringen</li>
           <li>Je personeel in dienst hebt of dat overweegt</li>
-          <li>Je investeringen doet waarover je fiscaal advies wilt</li>
-          <li>Je te weinig tijd hebt en administratie consequent blijft liggen</li>
-          <li>Je eerder fouten hebt gemaakt in je aangifte en correcties moest indienen</li>
+          <li>Je administratie consequent blijft liggen</li>
         </ul>
+        <p>
+          Voor complexe situaties werken professionals vaak met <a href="/tools/exact-online" style={{ color: 'var(--accent)' }}>Exact Online</a> of <a href="/tools/twinfield" style={{ color: 'var(--accent)' }}>Twinfield</a> — professionele platforms die een boekhouder direct kan koppelen aan jouw administratie.
+        </p>
 
         <h2>De hybride aanpak: het beste van twee werelden</h2>
         <p>
-          Een populaire en kosteneffectieve keuze is de <strong>hybride aanpak</strong>: je doet de dagelijkse boekhouding zelf via software, maar laat de jaarlijkse inkomstenbelastingaangifte verzorgen door een boekhouder of belastingadviseur. Je hebt zo de controle en het overzicht, maar profiteert ook van professioneel advies op de momenten dat het er echt toe doet.
+          Populair en kosteneffectief: je doet de dagelijkse boekhouding zelf via software, maar laat de jaarlijkse inkomstenbelastingaangifte verzorgen door een boekhouder. Je hebt controle en overzicht, maar profiteert ook van professioneel advies op cruciale momenten.
         </p>
         <p>
-          Veel boekhoudprogramma&apos;s kunnen hun data eenvoudig exporteren zodat een boekhouder er snel mee aan de slag kan. Dit bespaart uren en houdt de kosten voor de boekhouder laag.
+          Alle genoemde boekhoudprogramma&apos;s kunnen hun data eenvoudig exporteren, zodat een boekhouder er snel mee aan de slag kan.
         </p>
 
-        <h2>Vergelijkingstabel: boekhouder vs. software</h2>
+        <h2>Vergelijking: boekhouder vs. software</h2>
         <ul>
           <li><strong>Kosten:</strong> Software €180–€480/jaar, boekhouder €960–€2.400/jaar</li>
           <li><strong>Tijdsinvestering:</strong> Software vereist eigen tijd, boekhouder neemt het uit handen</li>
           <li><strong>Fiscaal advies:</strong> Software geeft geen advies op maat, boekhouder wel</li>
-          <li><strong>Fouten:</strong> Zelf boekhouden brengt risico op fouten mee, boekhouder is verantwoordelijk</li>
-          <li><strong>Inzicht:</strong> Software geeft direct inzicht in je financien, boekhouder rapporteert achteraf</li>
+          <li><strong>Inzicht:</strong> Software geeft direct inzicht, boekhouder rapporteert achteraf</li>
         </ul>
-
-        <h2>Tips voor als je zelf gaat boekhouden</h2>
-        <p>
-          Kies een programma dat aansluit bij jouw manier van werken en dat een goede koppeling heeft met je bank. Houd je administratie wekelijks bij in plaats van alles aan het eind van het kwartaal in te voeren — dit scheelt enorm veel tijd en fouten. Sla al je bonnetjes digitaal op, bij voorkeur direct via een app van je boekhoudprogramma.
-        </p>
-        <p>
-          Onthoud dat de BTW-aangifte doorgaans elk kwartaal ingediend moet worden, en de inkomstenbelasting eenmaal per jaar. Plan deze momenten vooruit in je agenda zodat je nooit in tijdnood komt.
-        </p>
       </div>
 
       <div style={{ background: 'var(--accent-light)', border: '1px solid var(--accent)', borderRadius: 16, padding: '28px 32px', textAlign: 'center', marginTop: 48 }}>

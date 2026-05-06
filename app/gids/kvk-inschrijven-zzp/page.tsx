@@ -1,8 +1,8 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: "KVK Inschrijven als ZZP'er — Stap voor Stap (2026)",
-  description: "Alles over inschrijven bij de KVK als ZZP'er: kosten, benodigde documenten, rechtsvorm kiezen en wat je daarna moet regelen.",
+  title: "KVK inschrijven ZZP: stap voor stap (2026)",
+  description: "Hoe schrijf je je in bij de KVK als ZZP'er? Kosten €75, benodigde documenten, eenmanszaak of BV en wat je daarna moet regelen.",
 }
 
 export default function KvkInschrijvenZzpPage() {
@@ -18,7 +18,7 @@ export default function KvkInschrijvenZzpPage() {
       </div>
 
       <h1 style={{ fontSize: 'clamp(26px, 4vw, 38px)', fontWeight: 700, marginBottom: 16, lineHeight: 1.2 }}>
-        KVK inschrijven als ZZP&apos;er: stap voor stap uitgelegd
+        KVK inschrijven als ZZP&apos;er: stap voor stap uitgelegd (2026)
       </h1>
       <p style={{ fontSize: 17, color: 'var(--text-secondary)', marginBottom: 40, lineHeight: 1.7 }}>
         Voordat je als zelfstandige aan de slag kunt, moet je je onderneming inschrijven bij de Kamer van Koophandel. Dit is verplicht in Nederland. In deze gids leggen we precies uit hoe je dat doet, wat het kost en wat je na de inschrijving moet regelen.
@@ -29,8 +29,8 @@ export default function KvkInschrijvenZzpPage() {
         <ul style={{ margin: 0, paddingLeft: 20 }}>
           {[
             'Inschrijven bij de KVK is verplicht zodra je als ondernemer actief bent',
-            'Eenmanszaak is de meest gekozen rechtsvorm voor ZZP\'ers — geen notaris nodig',
-            'De inschrijfkosten bij de KVK bedragen €75,- (eenmalig, 2026)',
+            "Eenmanszaak is de meest gekozen rechtsvorm voor ZZP'ers — geen notaris nodig",
+            'Inschrijfkosten: €75 eenmalig (2026)',
             'Na inschrijving ontvang je automatisch een BTW-nummer van de Belastingdienst',
           ].map(item => (
             <li key={item} style={{ marginBottom: 6, fontSize: 14, color: 'var(--accent-text)' }}>{item}</li>
@@ -41,56 +41,59 @@ export default function KvkInschrijvenZzpPage() {
       <div className="prose">
         <h2>Wanneer moet je je inschrijven bij de KVK?</h2>
         <p>
-          Je bent verplicht om je in te schrijven bij de KVK zodra je een onderneming start. Dit geldt ook als je nog maar een paar uur per week werkt als freelancer. Wacht hier niet te lang mee: je kunt boetes krijgen als je zonder inschrijving factureert. De vuistregel is: schrijf je in voordat je je eerste factuur verstuurt.
-        </p>
-        <p>
-          Een uitzondering geldt voor zogenaamde &apos;hobby-activiteiten&apos; zonder winstoogmerk, maar zodra je structureel inkomen genereert, is er sprake van een onderneming en is inschrijving verplicht.
+          Je bent verplicht om je in te schrijven bij de KVK zodra je een onderneming start — ook als je maar een paar uur per week werkt als freelancer. Schrijf je in vóórdat je je eerste factuur verstuurt: zonder inschrijving facturen sturen kan leiden tot boetes.
         </p>
 
         <h2>Welke rechtsvorm kies je?</h2>
         <p>
-          De meeste ZZP&apos;ers kiezen voor een <strong>eenmanszaak</strong>. Dit is de eenvoudigste en goedkoopste rechtsvorm: je hoeft niet naar de notaris, er is geen minimumkapitaal vereist en de administratie is relatief eenvoudig. Het belangrijkste nadeel is dat je privé aansprakelijk bent voor schulden van de onderneming.
+          De meeste ZZP&apos;ers kiezen voor een <strong>eenmanszaak</strong>: eenvoudig, geen notaris nodig, geen minimumkapitaal. Het nadeel: privé aansprakelijkheid voor schulden.
         </p>
         <p>
-          Een <strong>BV (Besloten Vennootschap)</strong> is interessant als je een jaarwinst van meer dan circa €100.000 verwacht of als je het aansprakelijkheidsrisico wilt beperken. De oprichtingskosten voor een BV (notariskosten + KVK-inschrijving) liggen rond de €500 tot €1.000. Voor de meeste startende ZZP&apos;ers is een eenmanszaak de logische keuze.
+          Een <strong>BV</strong> is interessant bij een jaarwinst boven circa €100.000 of als je aansprakelijkheidsrisico wilt beperken. De oprichtingskosten liggen rond de €500–€1.000.
         </p>
 
-        <h2>Hoe schrijf je je in — stap voor stap</h2>
-        <h3>Stap 1: Maak een afspraak of kom langs</h3>
+        <h2>Stap voor stap inschrijven bij de KVK</h2>
+
+        <h3>Stap 1: Maak een afspraak</h3>
         <p>
-          Je kunt terecht bij elk KVK-kantoor in Nederland. Een afspraak maken kan via kvk.nl. Inschrijven kan ook online via de KVK-website, maar in de meeste gevallen moet je nog wel even langskomen met een geldig legitimatiebewijs om de inschrijving te voltooien.
+          Je kunt bij elk KVK-kantoor terecht. Een afspraak maken kan via kvk.nl. In de meeste gevallen moet je ook langskomen met een geldig legitimatiebewijs om de inschrijving te voltooien.
         </p>
+
         <h3>Stap 2: Neem de juiste documenten mee</h3>
         <p>
-          Zorg dat je een geldig paspoort of rijbewijs bij je hebt. Als je een eenmanszaak inschrijft heb je verder geen andere documenten nodig. Wil je een VOF of BV inschrijven, dan zijn er aanvullende documenten of een notariële akte nodig.
+          Voor een eenmanszaak heb je alleen een geldig paspoort of rijbewijs nodig. Voor een VOF of BV zijn aanvullende documenten of een notariële akte vereist.
         </p>
+
         <h3>Stap 3: Vul het inschrijfformulier in</h3>
         <p>
-          Je geeft onder andere op: de handelsnaam van je onderneming, de activiteiten die je gaat uitvoeren (SBI-code), je privéadres of bedrijfsadres, en de startdatum van de onderneming. De SBI-code bepaalt in welke branche je wordt ingedeeld en heeft geen directe fiscale gevolgen.
+          Je geeft op: handelsnaam, SBI-code (sector), adres en startdatum. De SBI-code bepaalt je branche-indeling en heeft geen directe fiscale gevolgen.
         </p>
+
         <h3>Stap 4: Betaal de inschrijfkosten</h3>
         <p>
-          De eenmalige inschrijfkosten bij de KVK bedragen in 2026 €75,-. Dit betaal je ter plaatse of online. Dit is een eenmalig bedrag — er zijn geen jaarlijkse kosten voor de KVK-inschrijving zelf.
+          Eenmalige kosten in 2026: <strong>€75</strong>. Daarna zijn er geen jaarlijkse KVK-kosten.
         </p>
 
         <h2>Wat gebeurt er na de inschrijving?</h2>
         <p>
-          Na de inschrijving ontvang je een KVK-nummer (8 cijfers). Dit nummer gebruik je op alle zakelijke documenten, zoals facturen en offertes. Binnen enkele dagen stelt de Belastingdienst je BTW-nummer vast en stuurt dit per post toe. Je BTW-nummer is verplicht op je facturen.
+          Je ontvangt een KVK-nummer (8 cijfers) dat op alle zakelijke documenten moet staan. Binnen enkele dagen stuurt de Belastingdienst je BTW-nummer per post.
         </p>
         <p>
-          Zorg dat je direct na de inschrijving ook de volgende zaken regelt:
+          Direct na inschrijving regelen:
         </p>
         <ul>
-          <li>Open een zakelijke bankrekening (niet wettelijk verplicht, maar sterk aanbevolen)</li>
-          <li>Kies een boekhoudprogramma of overweeg een boekhouder</li>
-          <li>Sluit eventueel een arbeidsongeschiktheidsverzekering af (AOV)</li>
-          <li>Controleer of je BTW-plichtig bent of voor de KOR kiest</li>
-          <li>Registreer je voor de BTW-aangifte bij de Belastingdienst</li>
+          <li>Open een zakelijke bankrekening</li>
+          <li>Kies een boekhoudprogramma — vergelijk de opties op <a href="/boekhoudprogramma" style={{ color: 'var(--accent)' }}>onze vergelijkingspagina</a></li>
+          <li>Overweeg een arbeidsongeschiktheidsverzekering (AOV)</li>
+          <li>Controleer of je BTW-plichtig bent of voor de <a href="/gids/kor-kleine-ondernemersregeling" style={{ color: 'var(--accent)' }}>KOR</a> kiest</li>
         </ul>
-
-        <h2>KVK-nummer en BTW-nummer: het verschil</h2>
         <p>
-          Je KVK-nummer (ook wel het handelsregisternummer) is openbaar en staat in het Handelsregister. Je BTW-nummer gebruik je uitsluitend voor fiscale doeleinden: op facturen, in communicatie met de Belastingdienst en bij intracommunautaire leveringen binnen de EU. Voor een eenmanszaak is het BTW-nummer gekoppeld aan je BSN-nummer, wat privacyrisico&apos;s met zich meebrengt. Je kunt bij de Belastingdienst een apart zakelijk BTW-id aanvragen dat je op facturen zet.
+          Populaire boekhoudprogramma&apos;s voor starters zijn <a href="/tools/moneybird" style={{ color: 'var(--accent)' }}>Moneybird</a> (gratis instapversie), <a href="/tools/jortt" style={{ color: 'var(--accent)' }}>Jortt</a> (eenvoudig, v.a. €7/mnd) en <a href="/tools/e-boekhouden" style={{ color: 'var(--accent)' }}>e-Boekhouden</a> (v.a. €9/mnd).
+        </p>
+
+        <h2>KVK-nummer vs. BTW-nummer: het verschil</h2>
+        <p>
+          Je KVK-nummer staat in het openbare Handelsregister. Je BTW-nummer gebruik je op facturen en in fiscale communicatie. Voor een eenmanszaak vraag je bij de Belastingdienst een apart zakelijk BTW-identificatienummer aan — dat beschermt je BSN-nummer op facturen.
         </p>
       </div>
 
