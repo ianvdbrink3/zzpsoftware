@@ -57,3 +57,16 @@ a { color: inherit; text-decoration: none; }
 .text-accent { color: var(--accent); }
 .text-muted { color: var(--text-secondary); }
 .text-hint { color: var(--text-tertiary); }
+
+/* Scrollytelling — sticky two-column layout */
+.sticky-grid { display: grid; grid-template-columns: 1fr 1.2fr; gap: 64px; align-items: start; }
+.sticky-grid-pin { position: sticky; top: 88px; }
+@media (max-width: 720px) {
+  .sticky-grid { grid-template-columns: 1fr; gap: 32px; }
+  .sticky-grid-pin { position: static; }
+}
+
+/* Reduced motion — disable all transforms/transitions */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+}

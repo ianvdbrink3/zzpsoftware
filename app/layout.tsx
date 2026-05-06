@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import Script from 'next/script'
+import { ScrollProgress } from '@/components/ScrollProgress'
 import './globals.css'
 
 export const metadata: Metadata = {
@@ -44,6 +45,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             </nav>
           </div>
         </header>
+        <ScrollProgress />
         <main>{children}</main>
         <footer style={{ borderTop: '1px solid var(--border)', marginTop: 80, padding: '48px 24px', background: 'var(--bg-card)' }}>
           <div style={{ maxWidth: 1100, margin: '0 auto' }}>
