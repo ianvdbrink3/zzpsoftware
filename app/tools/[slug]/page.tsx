@@ -13,6 +13,11 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   return {
     title: `${tool.name} Review 2026 — Eerlijke beoordeling voor ZZP'ers`,
     description: `Uitgebreide ${tool.name} review: gebruiksgemak, functies, prijzen en voor wie het geschikt is. Onze eerlijke beoordeling voor ZZP'ers.`,
+    alternates: { canonical: `/tools/${slug}` },
+    openGraph: {
+      type: 'article',
+      url: `/tools/${slug}`,
+    },
   }
 }
 
@@ -45,7 +50,38 @@ export default async function ToolPage({ params }: { params: Promise<{ slug: str
   if (!tool) notFound()
   const cheapest = getCheapestPlan(tool)
 
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'SoftwareApplication',
+    name: tool.name,
+    applicationCategory: 'BusinessApplication',
+    operatingSystem: 'Web, iOS, Android',
+    description: tool.description,
+    url: tool.affiliateUrl,
+    offers: tool.pricing.plans.map(plan => ({
+      '@type': 'Offer',
+      price: plan.price,
+      priceCurrency: 'EUR',
+      priceSpecification: { '@type': 'UnitPriceSpecification', billingDuration: 'P1M', name: plan.name },
+    })),
+    aggregateRating: {
+      '@type': 'AggregateRating',
+      ratingValue: tool.rating,
+      reviewCount: tool.reviewCount,
+      bestRating: 5,
+      worstRating: 1,
+    },
+    review: {
+      '@type': 'Review',
+      reviewRating: { '@type': 'Rating', ratingValue: tool.rating, bestRating: 5 },
+      author: { '@type': 'Organization', name: 'SlimBoekhoud' },
+      reviewBody: tool.reviewText.intro,
+    },
+  }
+
   return (
+    <>
+    <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
     <div style={{ maxWidth: 820, margin: '0 auto', padding: '48px 24px' }}>
       <div style={{ fontSize: 13, color: 'var(--text-tertiary)', marginBottom: 24 }}>
         <a href="/" style={{ color: 'var(--text-tertiary)' }}>Home</a> / <a href="/boekhoudprogramma" style={{ color: 'var(--text-tertiary)' }}>Boekhoudprogramma's</a> / {tool.name}
@@ -148,5 +184,6 @@ export default async function ToolPage({ params }: { params: Promise<{ slug: str
       </div>
       <p style={{ fontSize: 12, color: 'var(--text-tertiary)', marginTop: 12, textAlign: 'center' }}>* Affiliate link — wij ontvangen een vergoeding als je via deze link een abonnement afsluit.</p>
     </div>
+    </>
   )
 }

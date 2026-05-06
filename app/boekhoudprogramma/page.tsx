@@ -4,6 +4,8 @@ import type { Metadata } from 'next'
 export const metadata: Metadata = {
   title: "Beste Boekhoudprogramma ZZP 2026 — Top 6 vergeleken",
   description: "Vergelijk de 6 beste boekhoudprogramma's voor ZZP'ers. Prijzen, functies en eerlijke reviews.",
+  alternates: { canonical: '/boekhoudprogramma' },
+  openGraph: { type: 'website', url: '/boekhoudprogramma' },
 }
 
 export default function BoekhoudprogrammaPage() {

@@ -26,6 +26,8 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   return {
     title: `${a.name} vs ${b.name} 2026 — Welke kies jij?`,
     description: `${a.name} of ${b.name}? We vergelijken functies, prijs en gebruiksgemak.`,
+    alternates: { canonical: `/vergelijk/${slug}` },
+    openGraph: { type: 'article', url: `/vergelijk/${slug}` },
   }
 }
 

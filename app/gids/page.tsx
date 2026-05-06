@@ -3,6 +3,8 @@ import type { Metadata } from 'next'
 export const metadata: Metadata = {
   title: "ZZP Administratie Gidsen 2026 — Praktische Tips & Uitleg",
   description: "Praktische gidsen voor ZZP'ers over boekhouden, BTW, belasting, starten en administratie. Alles wat je nodig hebt als zelfstandige.",
+  alternates: { canonical: '/gids' },
+  openGraph: { type: 'website', url: '/gids' },
 }
 
 const guides = [

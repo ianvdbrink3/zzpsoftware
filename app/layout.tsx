@@ -7,12 +7,55 @@ export const metadata: Metadata = {
   title: { default: 'SlimBoekhoud — Beste Boekhoudprogramma voor ZZP 2026', template: '%s | SlimBoekhoud' },
   description: "Vergelijk de beste boekhoudprogramma's, factuurapps en software voor ZZP'ers. Eerlijke reviews en onafhankelijk advies.",
   metadataBase: new URL('https://slimboekhoud.nl'),
+  openGraph: {
+    locale: 'nl_NL',
+    type: 'website',
+    siteName: 'SlimBoekhoud',
+    images: [{ url: '/opengraph-image', width: 1200, height: 630, alt: 'SlimBoekhoud — Beste boekhoudprogramma voor ZZP' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    site: '@slimboekhoud',
+  },
+  verification: {
+    google: process.env.GOOGLE_SITE_VERIFICATION ?? '',
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: { index: true, follow: true, 'max-image-preview': 'large' },
+  },
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="nl">
       <body>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@graph': [
+              {
+                '@type': 'WebSite',
+                '@id': 'https://slimboekhoud.nl/#website',
+                url: 'https://slimboekhoud.nl',
+                name: 'SlimBoekhoud',
+                description: "Vergelijk de beste boekhoudprogramma's voor ZZP'ers",
+                inLanguage: 'nl-NL',
+                potentialAction: { '@type': 'SearchAction', target: { '@type': 'EntryPoint', urlTemplate: 'https://slimboekhoud.nl/boekhoudprogramma' }, 'query-input': 'required name=search_term_string' },
+              },
+              {
+                '@type': 'Organization',
+                '@id': 'https://slimboekhoud.nl/#organization',
+                name: 'SlimBoekhoud',
+                url: 'https://slimboekhoud.nl',
+                logo: { '@type': 'ImageObject', url: 'https://slimboekhoud.nl/opengraph-image' },
+                sameAs: [],
+              },
+            ],
+          }) }}
+        />
         {process.env.NEXT_PUBLIC_GA_ID && (
           <>
             <Script src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA_ID}`} strategy="afterInteractive" />

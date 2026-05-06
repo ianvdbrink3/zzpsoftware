@@ -4,6 +4,8 @@ import type { Metadata } from 'next'
 export const metadata: Metadata = {
   title: "Vergelijk Boekhoudprogramma's ZZP 2026 — Alle opties naast elkaar",
   description: "Vergelijk de populairste boekhoudprogramma's voor ZZP'ers naast elkaar op prijs, functies en gebruiksgemak.",
+  alternates: { canonical: '/vergelijk' },
+  openGraph: { type: 'website', url: '/vergelijk' },
 }
 
 const VERSUS_PAIRS = [

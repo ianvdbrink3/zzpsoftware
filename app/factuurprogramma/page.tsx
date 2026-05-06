@@ -4,6 +4,8 @@ import type { Metadata } from 'next'
 export const metadata: Metadata = {
   title: "Beste Factuurprogramma ZZP 2026 — Top 5 vergeleken",
   description: "Vergelijk de beste factuurprogramma's voor ZZP'ers. Professionele facturen maken, automatische herinneringen en BTW-berekening.",
+  alternates: { canonical: '/factuurprogramma' },
+  openGraph: { type: 'website', url: '/factuurprogramma' },
 }
 
 export default function FactuurprogrammaPage() {
