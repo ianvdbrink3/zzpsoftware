@@ -8,7 +8,6 @@ const SECTIONS = [
   { id: 'functies', label: 'Functies' },
   { id: 'keuzehulp', label: 'Keuzehulp' },
   { id: 'methode', label: 'Methode' },
-  { id: 'nieuwsbrief', label: 'Updates' },
 ]
 
 export function SectionDots() {

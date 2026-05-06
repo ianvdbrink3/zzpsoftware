@@ -365,18 +365,6 @@ export function AnimatedHomePage({ tools }: { tools: Tool[] }) {
         </div>
       </section>
 
-      {/* ── NEWSLETTER ── */}
-      <section id="nieuwsbrief" style={{ background: 'var(--bg)', padding: '88px 24px' }}>
-        <Reveal style={{ maxWidth: 520, margin: '0 auto', textAlign: 'center' }}>
-          <h2 style={{ fontSize: 28, fontWeight: 700, marginBottom: 10, letterSpacing: '-0.02em' }}>Blijf op de hoogte</h2>
-          <p style={{ color: 'var(--text-secondary)', marginBottom: 28, fontSize: 15, lineHeight: 1.65 }}>Ontvang onze maandelijkse update met nieuwe software, prijswijzigingen en ZZP-tips. Geen spam.</p>
-          <form style={{ display: 'flex', gap: 8, maxWidth: 400, margin: '0 auto' }} action="/api/subscribe" method="POST">
-            <input type="email" name="email" placeholder="jouw@email.nl" required style={{ flex: 1, padding: '11px 14px', borderRadius: 10, border: '1px solid var(--border)', fontSize: 14, background: 'var(--bg-card)', outline: 'none' }} />
-            <button type="submit" className="btn-primary" style={{ whiteSpace: 'nowrap' }}>Aanmelden</button>
-          </form>
-          <p style={{ fontSize: 12, color: 'var(--text-tertiary)', marginTop: 12 }}>Uitschrijven kan altijd met één klik.</p>
-        </Reveal>
-      </section>
     </div>
   )
 }

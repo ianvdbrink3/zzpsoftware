@@ -30,8 +30,7 @@ export default function GidsPage() {
         ))}
         <div className="card" style={{ padding: 24, display: 'flex', flexDirection: 'column', justifyContent: 'center', border: '2px dashed var(--border)', background: 'var(--bg-subtle)' }}>
           <div style={{ fontWeight: 600, marginBottom: 8 }}>Meer gidsen komen eraan</div>
-          <p style={{ fontSize: 13, color: 'var(--text-secondary)', margin: '0 0 14px' }}>We werken aan nieuwe gidsen over urenregistratie, boekhouder vs software en meer.</p>
-          <a href="/api/subscribe" className="btn-secondary" style={{ fontSize: 13, justifyContent: 'center' }}>Ontvang updates →</a>
+          <p style={{ fontSize: 13, color: 'var(--text-secondary)', margin: 0 }}>We werken aan nieuwe gidsen over urenregistratie, boekhouder vs software en meer.</p>
         </div>
       </div>
     </div>
