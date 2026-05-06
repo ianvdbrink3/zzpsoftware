@@ -53,7 +53,7 @@ export default function VergelijkPage() {
                   <span style={{ fontSize: 12, fontWeight: 600, width: 24, textAlign: 'right' }}>{tool.score[key]}</span>
                 </div>
               ))}
-              <a href={`/tools/${tool.slug}`} className="btn-secondary" style={{ marginTop: 14, width: '100%', justifyContent: 'center', fontSize: 13 }}>Lees review</a>
+              <a href={`/tools/${tool.slug}`} className="btn-secondary" style={{ marginTop: 14, width: '100%', justifyContent: 'center', fontSize: 13 }}>Lees meer</a>
             </div>
           )
         })}

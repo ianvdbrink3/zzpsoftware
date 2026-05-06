@@ -62,7 +62,7 @@ export default function BoekhoudprogrammaPage() {
                 {tool.pricing.freeTrial > 0 && <div style={{ fontSize: 12, color: 'var(--accent)' }}>✓ {tool.pricing.freeTrial} dgn gratis</div>}
               </div>
               <div style={{ display: 'flex', gap: 8, flexShrink: 0 }}>
-                <a href={`/tools/${tool.slug}`} className="btn-secondary" style={{ fontSize: 13, padding: '8px 14px' }}>Review</a>
+                <a href={`/tools/${tool.slug}`} className="btn-secondary" style={{ fontSize: 13, padding: '8px 14px' }}>Lees meer</a>
                 <a href={tool.affiliateUrl} className="btn-primary" style={{ fontSize: 13, padding: '8px 14px' }}>Probeer →</a>
               </div>
             </div>

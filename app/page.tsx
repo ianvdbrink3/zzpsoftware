@@ -55,7 +55,7 @@ function ToolCard({ tool, rank }: { tool: Tool; rank: number }) {
       </div>
       <div style={{ display: 'flex', gap: 10, alignItems: 'center', flexWrap: 'wrap' }}>
         <a href={tool.affiliateUrl} className="btn-primary" style={{ flex: 1, justifyContent: 'center' }}>Probeer {tool.name} gratis →</a>
-        <a href={`/tools/${tool.slug}`} className="btn-secondary" style={{ fontSize: 13 }}>Lees review</a>
+        <a href={`/tools/${tool.slug}`} className="btn-secondary" style={{ fontSize: 13 }}>Lees meer</a>
       </div>
     </div>
   )

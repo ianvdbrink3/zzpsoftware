@@ -135,7 +135,7 @@ export default function BoekhoudenGidsPage() {
             </div>
             <div style={{ display: 'flex', gap: 8, alignItems: 'center' }}>
               <span style={{ fontSize: 13, color: 'var(--text-tertiary)' }}>{tool.price}</span>
-              <a href={`/tools/${tool.slug}`} className="btn-secondary" style={{ fontSize: 13, padding: '6px 14px' }}>Lees review</a>
+              <a href={`/tools/${tool.slug}`} className="btn-secondary" style={{ fontSize: 13, padding: '6px 14px' }}>Lees meer</a>
             </div>
           </div>
         ))}
